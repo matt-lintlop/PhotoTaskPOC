@@ -10,16 +10,18 @@ import UIKit
 
 class PhotoTaskViewController: UIViewController {
 
-    @IBOutlet weak var mainHeadingLabel: UILabel!
-    @IBOutlet weak var subHeadingLabel: UILabel!
+    @IBOutlet weak var photoTaskNameLabel: UILabel!
+    @IBOutlet weak var photoTaskLocationLabel: UILabel!
+    @IBOutlet weak var photoTaskDetailsTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("Loaded PhotoTaskViewController")
     }
 
-
+    @IBAction func submitPhotoTaskPressed(_ sender: Any) {
+        print("Submit Photo Task Pressed")
+    }
+    
     /*
     // MARK: - Navigation
 

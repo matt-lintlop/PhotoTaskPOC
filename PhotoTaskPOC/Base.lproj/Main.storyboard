@@ -61,23 +61,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77W-yY-mtS">
+                                <rect key="frame" x="16" y="62" width="288" height="196"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="KHk-C5-NWF"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-Uw-Ogl">
+                                <rect key="frame" x="96" y="952" width="128" height="30"/>
+                                <state key="normal" title="Submit Photo Task"/>
+                                <connections>
+                                    <action selector="submitPhotoTaskPressed:" destination="Wx1-Of-JGN" eventType="touchUpInside" id="Eg9-iN-hT8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="77W-yY-mtS" firstAttribute="top" secondItem="uzP-vI-mIP" secondAttribute="bottom" constant="7" id="ATH-dN-4zw"/>
                             <constraint firstItem="uzP-vI-mIP" firstAttribute="leading" secondItem="Cvq-hF-ppq" secondAttribute="leading" id="JMY-Lu-Heh"/>
                             <constraint firstItem="uzP-vI-mIP" firstAttribute="top" secondItem="Cvq-hF-ppq" secondAttribute="bottom" constant="4" id="Lwf-8O-ov3"/>
                             <constraint firstItem="Cvq-hF-ppq" firstAttribute="top" secondItem="ksv-Bw-PMi" secondAttribute="top" constant="10" id="OtL-yZ-cLW"/>
+                            <constraint firstItem="77W-yY-mtS" firstAttribute="leading" secondItem="uzP-vI-mIP" secondAttribute="leading" id="WpI-KZ-aww"/>
+                            <constraint firstItem="8NG-Uw-Ogl" firstAttribute="centerX" secondItem="1RZ-zl-bs3" secondAttribute="centerX" id="bPF-1D-kvP"/>
                             <constraint firstItem="uzP-vI-mIP" firstAttribute="trailing" secondItem="Cvq-hF-ppq" secondAttribute="trailing" id="dqb-9W-L4x"/>
+                            <constraint firstItem="ksv-Bw-PMi" firstAttribute="bottom" secondItem="8NG-Uw-Ogl" secondAttribute="bottom" constant="20" id="fYE-0p-X74"/>
                             <constraint firstItem="Cvq-hF-ppq" firstAttribute="leading" secondItem="ksv-Bw-PMi" secondAttribute="leading" constant="16" id="mGj-p4-0FY"/>
+                            <constraint firstItem="77W-yY-mtS" firstAttribute="trailing" secondItem="uzP-vI-mIP" secondAttribute="trailing" id="ugO-Tp-zsI"/>
                             <constraint firstItem="ksv-Bw-PMi" firstAttribute="trailing" secondItem="Cvq-hF-ppq" secondAttribute="trailing" constant="16" id="xwd-4M-Qnx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ksv-Bw-PMi"/>
                     </view>
+                    <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="1112"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="mainHeadingLabel" destination="Cvq-hF-ppq" id="TTN-Ma-vYA"/>
-                        <outlet property="subHeadingLabel" destination="uzP-vI-mIP" id="4z3-RC-TaL"/>
+                        <outlet property="photoTaskDetailsTextField" destination="77W-yY-mtS" id="8Tq-Ms-ixK"/>
+                        <outlet property="photoTaskLocationLabel" destination="uzP-vI-mIP" id="4z3-RC-TaL"/>
+                        <outlet property="photoTaskNameLabel" destination="Cvq-hF-ppq" id="TTN-Ma-vYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deT-E1-Lzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
