@@ -48,14 +48,15 @@
                     <view key="view" contentMode="scaleToFill" id="1RZ-zl-bs3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ksv-Bw-PMi"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="1112"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deT-E1-Lzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="77"/>
+            <point key="canvasLocation" x="1026" y="101"/>
         </scene>
     </scenes>
 </document>
