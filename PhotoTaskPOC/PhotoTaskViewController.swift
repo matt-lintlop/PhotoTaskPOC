@@ -10,6 +10,8 @@ import UIKit
 
 class PhotoTaskViewController: UIViewController {
 
+    @IBOutlet weak var mainHeadingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
