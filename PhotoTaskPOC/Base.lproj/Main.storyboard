@@ -78,10 +78,12 @@
                                     <action selector="submitPhotoTaskPressed:" destination="Wx1-Of-JGN" eventType="touchUpInside" id="Eg9-iN-hT8"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1IU-CV-VEU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1IU-CV-VEU">
                                 <rect key="frame" x="16" y="524" width="288" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="JjH-kZ-PzS"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -131,6 +133,9 @@
                         <constraints>
                             <constraint firstItem="ksv-Bw-PMi" firstAttribute="bottom" secondItem="8NG-Uw-Ogl" secondAttribute="bottom" constant="20" id="5eL-7X-cBO"/>
                             <constraint firstItem="8NG-Uw-Ogl" firstAttribute="centerX" secondItem="1RZ-zl-bs3" secondAttribute="centerX" id="gRj-nO-T4Z"/>
+                            <constraint firstItem="8NG-Uw-Ogl" firstAttribute="top" secondItem="1IU-CV-VEU" secondAttribute="bottom" constant="22" id="xUu-pd-voe"/>
+                            <constraint firstItem="1IU-CV-VEU" firstAttribute="leading" secondItem="ksv-Bw-PMi" secondAttribute="leading" constant="16" id="yk5-uR-cHU"/>
+                            <constraint firstItem="ksv-Bw-PMi" firstAttribute="trailing" secondItem="1IU-CV-VEU" secondAttribute="trailing" constant="16" id="zBX-JS-m1E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ksv-Bw-PMi"/>
                     </view>
