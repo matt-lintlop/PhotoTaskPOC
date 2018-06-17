@@ -14,6 +14,9 @@ class PhotoTaskViewController: UIViewController {
     @IBOutlet weak var photoTaskLocationLabel: UILabel!
     @IBOutlet weak var photoTaskDetailsTextField: UITextView!
     
+    @IBOutlet weak var storeNotesTextField: UITextView!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
