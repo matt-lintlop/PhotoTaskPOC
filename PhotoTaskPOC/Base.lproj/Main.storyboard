@@ -49,16 +49,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1052"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Window" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvq-hF-ppq">
-                                <rect key="frame" x="16" y="0.0" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Window" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvq-hF-ppq">
+                                <rect key="frame" x="16" y="10" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Window Drop Zone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzP-vI-mIP">
+                                <rect key="frame" x="16" y="34.5" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Cvq-hF-ppq" firstAttribute="top" secondItem="ksv-Bw-PMi" secondAttribute="top" id="OtL-yZ-cLW"/>
+                            <constraint firstItem="uzP-vI-mIP" firstAttribute="leading" secondItem="Cvq-hF-ppq" secondAttribute="leading" id="JMY-Lu-Heh"/>
+                            <constraint firstItem="uzP-vI-mIP" firstAttribute="top" secondItem="Cvq-hF-ppq" secondAttribute="bottom" constant="4" id="Lwf-8O-ov3"/>
+                            <constraint firstItem="Cvq-hF-ppq" firstAttribute="top" secondItem="ksv-Bw-PMi" secondAttribute="top" constant="10" id="OtL-yZ-cLW"/>
+                            <constraint firstItem="uzP-vI-mIP" firstAttribute="trailing" secondItem="Cvq-hF-ppq" secondAttribute="trailing" id="dqb-9W-L4x"/>
                             <constraint firstItem="Cvq-hF-ppq" firstAttribute="leading" secondItem="ksv-Bw-PMi" secondAttribute="leading" constant="16" id="mGj-p4-0FY"/>
                             <constraint firstItem="ksv-Bw-PMi" firstAttribute="trailing" secondItem="Cvq-hF-ppq" secondAttribute="trailing" constant="16" id="xwd-4M-Qnx"/>
                         </constraints>
@@ -68,11 +77,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="mainHeadingLabel" destination="Cvq-hF-ppq" id="TTN-Ma-vYA"/>
+                        <outlet property="subHeadingLabel" destination="uzP-vI-mIP" id="4z3-RC-TaL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deT-E1-Lzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025.625" y="100.89928057553958"/>
+            <point key="canvasLocation" x="1024.4604316546763" y="100.89928057553958"/>
         </scene>
     </scenes>
 </document>
