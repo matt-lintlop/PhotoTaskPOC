@@ -12,6 +12,7 @@
 		17F82C2D20D5F9180014A570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F82C2B20D5F9180014A570 /* Main.storyboard */; };
 		17F82C2F20D5F91B0014A570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F82C2E20D5F91B0014A570 /* Assets.xcassets */; };
 		17F82C3220D5F91B0014A570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F82C3020D5F91B0014A570 /* LaunchScreen.storyboard */; };
+		17F82C4120D5FF390014A570 /* PhotoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F82C3F20D5FF390014A570 /* PhotoTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		17F82C2E20D5F91B0014A570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F82C3120D5F91B0014A570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F82C3320D5F91B0014A570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F82C3F20D5FF390014A570 /* PhotoTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				17F82C2720D5F9180014A570 /* AppDelegate.swift */,
 				17F82C2920D5F9180014A570 /* ViewController.swift */,
 				17F82C2B20D5F9180014A570 /* Main.storyboard */,
+				17F82C3F20D5FF390014A570 /* PhotoTaskViewController.swift */,
 				17F82C2E20D5F91B0014A570 /* Assets.xcassets */,
 				17F82C3020D5F91B0014A570 /* LaunchScreen.storyboard */,
 				17F82C3320D5F91B0014A570 /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F82C2A20D5F9180014A570 /* ViewController.swift in Sources */,
+				17F82C4120D5FF390014A570 /* PhotoTaskViewController.swift in Sources */,
 				17F82C2820D5F9180014A570 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
