@@ -1,38 +1,206 @@
 //
 //  PhotoTaskViewController.swift
-//  PhotoTaskPOC
+//  Pegasus
 //
-//  Created by Matt Lintlop on 6/16/18.
-//  Copyright © 2018 Matt Lintlop. All rights reserved.
+//  Created by Matthew Lintlop on 6/18/18.
+//  Copyright © 2018 Apple Inc. All rights reserved.
 //
 
 import UIKit
+import AVFoundation
+import MobileCoreServices
 
-class PhotoTaskViewController: UIViewController {
+class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var photoTaskNameLabel: UILabel!
-    @IBOutlet weak var photoTaskLocationLabel: UILabel!
-    @IBOutlet weak var photoTaskDetailsTextField: UITextView!
+    private struct Constants {
+        static let topAnchorOffset: CGFloat = 10
+    }
     
-    @IBOutlet weak var storeNotesTextField: UITextView!
-   
+    @IBOutlet weak var photoTaskTitleLabel: UILabel!
+    @IBOutlet weak var photoTaskLocationLabel: UILabel!
+    @IBOutlet weak var photoTaskInstructionsTextField: UITextView!
+    
+    @IBOutlet weak var photosStackView: UIStackView!
+    @IBOutlet weak var lowerSectionView: UIView!
+    @IBOutlet weak var submitPhotoTaskButton: UIButton!
+    @IBOutlet weak var photosStackViewContentWidthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var photosScrollView: UIScrollView!
+    var imagePicker: UIImagePickerController?
+    
+    @IBOutlet weak var addPhotoButton: UIButton!
+    
+    let placeHolderText = "PhotoTask.StoreNotes.DefaultText".localized
+    let layerCornerRadius: CGFloat = 8.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoTaskInstructionsTextField.delegate = self
+        
+        photoTaskInstructionsTextField.text = placeHolderText
+        photoTaskInstructionsTextField.textColor = UIColor.lightGray
+        
+        submitPhotoTaskButton.layer.cornerRadius = layerCornerRadius
+        
+        addPhotoButton.layer.cornerRadius = layerCornerRadius
+        addPhotoButton.clipsToBounds = true
+        
+        setupStackView()
+    }
+     
+    func setupStackView() {
+        let viewHeight = photosScrollView.bounds.size.height
+        let viewWidth = photosScrollView.bounds.size.width
+        let frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
+        let photoView = UIView(frame: frame)
+        
+        let widthConstraint = photoView.widthAnchor.constraint(lessThanOrEqualToConstant: viewWidth)
+        let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: viewHeight)
+        NSLayoutConstraint.activate([
+            widthConstraint,
+            heightConstraint
+            ])
+
+        photoView.backgroundColor = UIColor.clear
+        photosStackView.insertArrangedSubview(photoView, at: 0)
+        setAutoLayoutConstraints()
     }
 
+    func addImageViewToStackView(_ imageView: UIImageView) {
+        photosStackView.insertArrangedSubview(imageView, at: 0)
+        setAutoLayoutConstraints()
+        photosScrollView.setContentOffset(CGPoint.zero, animated: true)
+    }
+    
+    func addPhoto(withImage image: UIImage) {
+        let stackViewSize = photosStackView.bounds.size
+        let height = stackViewSize.height
+        let photoImageFrame = CGRect(x: 0, y: 0, width: height, height: height)
+        let photoImageView = UIImageView(frame: photoImageFrame)
+        photoImageView.image = image
+        photoImageView.layer.cornerRadius = layerCornerRadius
+        photoImageView.clipsToBounds = true
+        let widthConstarint = photoImageView.widthAnchor.constraint(equalToConstant: height)
+        NSLayoutConstraint.activate([widthConstarint])
+        addImageViewToStackView(photoImageView)
+    }
+   
+    private func setAutoLayoutConstraints() {
+        guard photosStackView != nil else {
+            return
+        }
+        let scrollViewWidth = photosScrollView.bounds.size.width
+        let subViewCount = photosStackView.arrangedSubviews.count
+        if (subViewCount <= 1) {
+            photosStackViewContentWidthConstraint.constant = scrollViewWidth
+        }
+        else {
+            let photoView = photosStackView.arrangedSubviews.first!
+            let photoViewWidth = photoView.bounds.size.width
+            let totalSpacing:CGFloat = CGFloat(subViewCount-1) * photosStackView.spacing
+            var stackViewtWidth: CGFloat = (CGFloat(subViewCount-1) * photoViewWidth) + totalSpacing
+            stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
+            photosStackViewContentWidthConstraint.constant = stackViewtWidth
+        }
+    }
+    
     @IBAction func submitPhotoTaskPressed(_ sender: Any) {
         print("Submit Photo Task Pressed")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addPhotoPressed(_ sender: Any) {
+        requestCameraAccess()
     }
-    */
+    
+    func takePhoto() {
+        imagePicker =  UIImagePickerController()
+        guard let imagePicker = imagePicker else {
+            return
+        }
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        imagePicker.mediaTypes =  [kUTTypeImage as String]
+        imagePicker.cameraCaptureMode = .photo
+        imagePicker.modalPresentationStyle = .fullScreen
+        present(imagePicker,animated: true,completion: nil)
+    }
+    
+    func requestCameraAccess() {
+        guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) else {
+            print("The Simulator does not have a camera.")
+            return
+        }
+        
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { [weak self] success in
+            DispatchQueue.main.async {
+                if success {
+                    self?.takePhoto()
+                } else {
+                    let alert = UIAlertController(title: "Camera", message: "Camera access is required to use this application", preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+                    }))
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
+    }
+    
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let photoImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        addPhoto(withImage: photoImage)
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Image picker did cancel.")
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        
+        textView.textColor = .black
+        
+        if(textView.text == placeHolderText) {
+            textView.text = ""
+        }
+        
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if(textView.text == "") {
+            textView.text = placeHolderText
+            textView.textColor = .lightGray
+        }
+     }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        return true
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        print("Close pressed.")
+  }
 
+    //
+//        guard let cardViewController = parent as? CardViewController else {
+//            return
+//        }
+//        cardViewController.removeChildViewController()
+//     }
 }
+
+extension PhotoTaskViewController: CardViewControllerDelegate {
+    
+    func heightForCardHeader(cardViewController: CardViewController) -> CGFloat {
+        return Constants.topAnchorOffset
+    }
+    
+}
+
+

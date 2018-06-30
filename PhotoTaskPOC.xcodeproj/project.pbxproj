@@ -13,6 +13,10 @@
 		17F82C2F20D5F91B0014A570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F82C2E20D5F91B0014A570 /* Assets.xcassets */; };
 		17F82C3220D5F91B0014A570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F82C3020D5F91B0014A570 /* LaunchScreen.storyboard */; };
 		17F82C4120D5FF390014A570 /* PhotoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F82C3F20D5FF390014A570 /* PhotoTaskViewController.swift */; };
+		44F67EAB20E81B6700AF2544 /* PhotoTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F67EA920E81B6600AF2544 /* PhotoTaskView.swift */; };
+		44F67EAC20E81B6700AF2544 /* PhotoTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44F67EAA20E81B6700AF2544 /* PhotoTaskView.xib */; };
+		44F67EAE20E81B7000AF2544 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F67EAD20E81B7000AF2544 /* CardViewController.swift */; };
+		44F67EB020E81D7700AF2544 /* PhotoTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F67EAF20E81D7700AF2544 /* PhotoTask.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		17F82C3120D5F91B0014A570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F82C3320D5F91B0014A570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F82C3F20D5FF390014A570 /* PhotoTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTaskViewController.swift; sourceTree = "<group>"; };
+		44F67EA920E81B6600AF2544 /* PhotoTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTaskView.swift; sourceTree = "<group>"; };
+		44F67EAA20E81B6700AF2544 /* PhotoTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoTaskView.xib; sourceTree = "<group>"; };
+		44F67EAD20E81B7000AF2544 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		44F67EAF20E81D7700AF2544 /* PhotoTask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PhotoTask.storyboard; path = ../../../Desktop/NEW/PhotoTask.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				17F82C2920D5F9180014A570 /* ViewController.swift */,
 				17F82C2B20D5F9180014A570 /* Main.storyboard */,
 				17F82C3F20D5FF390014A570 /* PhotoTaskViewController.swift */,
+				44F67EAD20E81B7000AF2544 /* CardViewController.swift */,
+				44F67EAF20E81D7700AF2544 /* PhotoTask.storyboard */,
+				44F67EA920E81B6600AF2544 /* PhotoTaskView.swift */,
+				44F67EAA20E81B6700AF2544 /* PhotoTaskView.xib */,
 				17F82C2E20D5F91B0014A570 /* Assets.xcassets */,
 				17F82C3020D5F91B0014A570 /* LaunchScreen.storyboard */,
 				17F82C3320D5F91B0014A570 /* Info.plist */,
@@ -127,7 +139,9 @@
 			files = (
 				17F82C3220D5F91B0014A570 /* LaunchScreen.storyboard in Resources */,
 				17F82C2F20D5F91B0014A570 /* Assets.xcassets in Resources */,
+				44F67EAC20E81B6700AF2544 /* PhotoTaskView.xib in Resources */,
 				17F82C2D20D5F9180014A570 /* Main.storyboard in Resources */,
+				44F67EB020E81D7700AF2544 /* PhotoTask.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +154,8 @@
 			files = (
 				17F82C2A20D5F9180014A570 /* ViewController.swift in Sources */,
 				17F82C4120D5FF390014A570 /* PhotoTaskViewController.swift in Sources */,
+				44F67EAB20E81B6700AF2544 /* PhotoTaskView.swift in Sources */,
+				44F67EAE20E81B7000AF2544 /* CardViewController.swift in Sources */,
 				17F82C2820D5F9180014A570 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.infosys.PhotoTaskPOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -311,7 +327,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.infosys.PhotoTaskPOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
