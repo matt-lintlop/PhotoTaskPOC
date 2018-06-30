@@ -83,8 +83,9 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         photoImageView.image = image
         mainView.layer.cornerRadius = layerCornerRadius
         mainView.clipsToBounds = true
-        let widthConstarint = mainView.widthAnchor.constraint(equalToConstant: height)
-        NSLayoutConstraint.activate([widthConstarint])
+        let widthConstraint = mainView.widthAnchor.constraint(equalToConstant: height)
+        let heightConstraint = mainView.heightAnchor.constraint(equalToConstant: height)
+        NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.insertArrangedSubview(mainView, at: 0)
         setAutoLayoutConstraints()
     }
