@@ -26,7 +26,7 @@ class UIViewFromNib: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
- //       loadViewFromNib()
+        loadViewFromNib()
     }
     
     //MARK:
