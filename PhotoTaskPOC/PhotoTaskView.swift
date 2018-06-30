@@ -8,16 +8,10 @@
 
 import UIKit
 
-class PhotoTaskView : UIView {
+class PhotoTaskView : UIViewFromNib {
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var photoImageView: UIImageView!
     
-    override init(frame: CGRect) { // for using CustomView in code
-        super.init(frame: frame)
-
-    }
-    
-    required init?(coder aDecoder: NSCoder) { // for using CustomView in IB
-        super.init(coder: aDecoder)
-    }
+    override var nibName: String { return "PhotoTaskView" }
  }

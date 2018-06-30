@@ -67,23 +67,24 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         setAutoLayoutConstraints()
     }
 
-    func addImageViewToStackView(_ imageView: UIImageView) {
-        photosStackView.insertArrangedSubview(imageView, at: 0)
-        setAutoLayoutConstraints()
-        photosScrollView.setContentOffset(CGPoint.zero, animated: true)
-    }
-    
     func addPhoto(withImage image: UIImage) {
         let stackViewSize = photosStackView.bounds.size
         let height = stackViewSize.height
         let photoImageFrame = CGRect(x: 0, y: 0, width: height, height: height)
-        let photoImageView = UIImageView(frame: photoImageFrame)
+        let photoView = PhotoTaskView(frame: photoImageFrame)
+        guard let mainView = photoView.mainView else {
+            return
+        }
+        guard let photoImageView = photoView.photoImageView else {
+            return
+        }
         photoImageView.image = image
-        photoImageView.layer.cornerRadius = layerCornerRadius
-        photoImageView.clipsToBounds = true
-        let widthConstarint = photoImageView.widthAnchor.constraint(equalToConstant: height)
+        mainView.layer.cornerRadius = layerCornerRadius
+        mainView.clipsToBounds = true
+        let widthConstarint = mainView.widthAnchor.constraint(equalToConstant: height)
         NSLayoutConstraint.activate([widthConstarint])
-        addImageViewToStackView(photoImageView)
+        photosStackView.insertArrangedSubview(mainView, at: 0)
+        setAutoLayoutConstraints()
     }
    
     private func setAutoLayoutConstraints() {
