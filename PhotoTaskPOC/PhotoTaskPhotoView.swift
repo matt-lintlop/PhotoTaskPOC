@@ -8,10 +8,10 @@
 
 import UIKit
 
-class PhotoTaskView : UIViewFromNib {
+class PhotoTaskPhotoView : UIViewFromNib {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var photoImageView: UIImageView!
     
-    override var nibName: String { return "PhotoTaskView" }
+    override var nibName: String { return "PhotoTaskPhotoView" }
  }

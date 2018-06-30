@@ -71,12 +71,14 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         let stackViewSize = photosStackView.bounds.size
         let height = stackViewSize.height
         let photoImageFrame = CGRect(x: 0, y: 0, width: height, height: height)
-        let photoView = PhotoTaskView(frame: photoImageFrame)
+        let photoView = PhotoTaskPhotoView(frame: photoImageFrame)
         guard let mainView = photoView.mainView else {
+            print("Error PhotoView mainView not found")
             return
         }
         guard let photoImageView = photoView.photoImageView else {
-            return
+            print("Error PhotoView photoImageView not found")
+           return
         }
         photoImageView.image = image
         mainView.layer.cornerRadius = layerCornerRadius
