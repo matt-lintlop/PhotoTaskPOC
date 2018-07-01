@@ -13,7 +13,7 @@ protocol PhotoTaskPhotoViewDelegate: AnyObject {
 }
 
 class PhotoTaskPhotoView : UIViewFromNib {
-    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var photoView: PhotoTaskPhotoView!
     @IBOutlet weak var photoImageView: UIImageView!
     
     override var nibName: String { return "PhotoTaskPhotoView" }

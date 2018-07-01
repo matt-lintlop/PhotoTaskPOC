@@ -47,10 +47,7 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         
         addPhotoButton.layer.cornerRadius = layerCornerRadius
         addPhotoButton.clipsToBounds = true
-        
         setupStackView()
-        
-        debugScrolling()        // TESTING
     }
      
     func setupStackView() {
@@ -76,7 +73,7 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         let height = stackViewSize.height
         let photoImageFrame = CGRect(x: 0, y: 0, width: height, height: height)
         let photoView = PhotoTaskPhotoView(frame: photoImageFrame)
-        guard let mainView = photoView.mainView else {
+        guard let mainView = photoView.photoView else {
             print("Error PhotoView mainView not found")
             return
         }
@@ -93,8 +90,6 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.insertArrangedSubview(mainView, at: 0)
         setAutoLayoutConstraints()
-
-        debugScrolling()        // TESTING
     }
    
     private func setAutoLayoutConstraints() {
@@ -199,10 +194,6 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         print("Close pressed.")
     }
     
-    // MARK: PhotoTaskPhotoViewDelegate
-    
-    
-    
     // MARK: Debugging
     
     private func debugScrolling() {
@@ -228,6 +219,8 @@ extension PhotoTaskViewController: CardViewControllerDelegate {
         return Constants.topAnchorOffset
     }
 }
+
+// MARK: PhotoTaskPhotoViewDelegate
 
 extension PhotoTaskViewController: PhotoTaskPhotoViewDelegate {
     

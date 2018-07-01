@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
             <connections>
-                <outlet property="mainView" destination="CH0-c5-9RP" id="LfU-Mf-Bka"/>
                 <outlet property="photoImageView" destination="LcX-a6-PQ7" id="b4m-mc-29h"/>
+                <outlet property="photoView" destination="CH0-c5-9RP" id="LfU-Mf-Bka"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-c5-9RP" userLabel="MainView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-c5-9RP" userLabel="PhotoView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
                     <rect key="frame" x="128" y="80" width="80" height="80"/>
                     <subviews>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-a6-PQ7" userLabel="Photo Image View">
