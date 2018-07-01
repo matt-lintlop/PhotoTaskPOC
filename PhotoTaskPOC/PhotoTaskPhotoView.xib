@@ -34,9 +34,7 @@
                             </constraints>
                             <state key="normal" image="closeBlack"/>
                             <connections>
-                                <action selector="closePhotoButtonPressedOutside:" destination="-1" eventType="touchUpOutside" id="R5N-3g-ap9"/>
                                 <action selector="closePhotoViewButtonPressed:" destination="-1" eventType="touchUpInside" id="YoG-H2-8lN"/>
-                                <action selector="closePressed:" destination="-1" eventType="touchUpInside" id="fER-MJ-6QS"/>
                             </connections>
                         </button>
                     </subviews>

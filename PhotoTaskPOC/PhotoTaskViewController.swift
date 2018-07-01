@@ -100,7 +100,6 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         let subViewCount = photosStackView.arrangedSubviews.count
         if (subViewCount == 0) {
             photosStackViewContentWidthConstraint.constant = scrollViewWidth
-            print("Computed stackViewtWidth = \(scrollViewWidth)")
         }
         else {
             let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
@@ -108,7 +107,6 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
             var stackViewtWidth: CGFloat = (CGFloat(subViewCount-1) * photoViewWidth) + totalSpacing
             stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
             photosStackViewContentWidthConstraint.constant = stackViewtWidth
-            print("Computed stackViewtWidth = \(stackViewtWidth)")
         }
     }
     

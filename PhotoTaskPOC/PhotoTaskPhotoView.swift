@@ -21,7 +21,7 @@ class PhotoTaskPhotoView : UIViewFromNib {
     
     @IBAction func closePhotoViewButtonPressed(_ sender: Any) {
         delegate?.photoViewWasDeleted(self)
-        print("Close Photo Button pressed")
+        print("Close Photo Button pressed: delegate = \(delegate)")
     }
     @IBAction func closePhotoButtonPressedOutside(_ sender: Any) {
         print("Close Photo Button pressed")
