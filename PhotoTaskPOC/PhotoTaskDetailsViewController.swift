@@ -74,7 +74,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
    
         
         let storyboard = UIStoryboard(name: "Testing", bundle: nil)
-        guard let testVC: TestViewController = storyboard.instantiateViewController(withIdentifier: "TestingViewController") as? TestViewController else {
+        guard let testVC: PhotoTaskPhotoViewController = storyboard.instantiateViewController(withIdentifier: "TestingViewController") as? PhotoTaskPhotoViewController else {
             return
         }
         let view = testVC.view

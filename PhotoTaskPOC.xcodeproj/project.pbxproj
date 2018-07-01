@@ -14,7 +14,7 @@
 		17F82C3220D5F91B0014A570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F82C3020D5F91B0014A570 /* LaunchScreen.storyboard */; };
 		17F82C4120D5FF390014A570 /* PhotoTaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F82C3F20D5FF390014A570 /* PhotoTaskDetailsViewController.swift */; };
 		44715B5920E9390900385B9B /* Testing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44715B5720E9390800385B9B /* Testing.storyboard */; };
-		44715B5A20E9390900385B9B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44715B5820E9390900385B9B /* TestViewController.swift */; };
+		44715B5A20E9390900385B9B /* PhotoTaskPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44715B5820E9390900385B9B /* PhotoTaskPhotoViewController.swift */; };
 		44B5121A20E823540039D4ED /* PhotoTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B5121920E823540039D4ED /* PhotoTask.storyboard */; };
 		44F67EAB20E81B6700AF2544 /* PhotoTaskPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F67EA920E81B6600AF2544 /* PhotoTaskPhotoView.swift */; };
 		44F67EAE20E81B7000AF2544 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F67EAD20E81B7000AF2544 /* CardViewController.swift */; };
@@ -30,7 +30,7 @@
 		17F82C3320D5F91B0014A570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F82C3F20D5FF390014A570 /* PhotoTaskDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTaskDetailsViewController.swift; sourceTree = "<group>"; };
 		44715B5720E9390800385B9B /* Testing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Testing.storyboard; sourceTree = "<group>"; };
-		44715B5820E9390900385B9B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		44715B5820E9390900385B9B /* PhotoTaskPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTaskPhotoViewController.swift; sourceTree = "<group>"; };
 		44B5121920E823540039D4ED /* PhotoTask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoTask.storyboard; sourceTree = "<group>"; };
 		44F67EA920E81B6600AF2544 /* PhotoTaskPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTaskPhotoView.swift; sourceTree = "<group>"; };
 		44F67EAD20E81B7000AF2544 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 				44F67EA920E81B6600AF2544 /* PhotoTaskPhotoView.swift */,
 				44F67EAD20E81B7000AF2544 /* CardViewController.swift */,
 				44715B5720E9390800385B9B /* Testing.storyboard */,
-				44715B5820E9390900385B9B /* TestViewController.swift */,
+				44715B5820E9390900385B9B /* PhotoTaskPhotoViewController.swift */,
 				17F82C2E20D5F91B0014A570 /* Assets.xcassets */,
 				17F82C3020D5F91B0014A570 /* LaunchScreen.storyboard */,
 				17F82C3320D5F91B0014A570 /* Info.plist */,
@@ -156,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F82C2A20D5F9180014A570 /* ViewController.swift in Sources */,
-				44715B5A20E9390900385B9B /* TestViewController.swift in Sources */,
+				44715B5A20E9390900385B9B /* PhotoTaskPhotoViewController.swift in Sources */,
 				17F82C4120D5FF390014A570 /* PhotoTaskDetailsViewController.swift in Sources */,
 				44F67EAB20E81B6700AF2544 /* PhotoTaskPhotoView.swift in Sources */,
 				44F67EAE20E81B7000AF2544 /* CardViewController.swift in Sources */,

@@ -12,7 +12,7 @@
         <!--Testing-->
         <scene sceneID="aaK-J9-VKc">
             <objects>
-                <viewController storyboardIdentifier="TestingViewController" title="Testing" id="qtu-SZ-TfZ" customClass="TestViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestingViewController" title="Testing" id="qtu-SZ-TfZ" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gL-6q-06f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,6 @@
                         <viewLayoutGuide key="safeArea" id="r8z-eM-N3X"/>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="yDh-6I-hh5" id="IHy-gF-cDj"/>
                         <outlet property="photoImageView" destination="uef-KX-uI1" id="hOv-uy-WjF"/>
                         <outlet property="photoView" destination="lVA-vG-Lsb" id="2Ec-GC-See"/>
                     </connections>
