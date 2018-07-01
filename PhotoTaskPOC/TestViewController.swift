@@ -12,6 +12,8 @@ class TestViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoView: PhotoTaskPhotoView!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

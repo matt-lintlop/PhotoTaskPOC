@@ -74,33 +74,29 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
    
         
         let storyboard = UIStoryboard(name: "Testing", bundle: nil)
-        let testVC = storyboard.instantiateViewController(withIdentifier: "TestingViewController")
+        guard let testVC: TestViewController = storyboard.instantiateViewController(withIdentifier: "TestingViewController") as? TestViewController else {
+            return
+        }
         let view = testVC.view
         print(testVC)
         //
         
         
-//        let storyboard = UIStoryboard(name: "PhotoTask", bundle: nil)
-        guard let photoTaskPhotoVC = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
-            print("Error PhotoTaskPhotoViewController not found")
-          return
-        }
-       
-//        let view = photoTaskPhotoVC.view                // sets the outlet variabless
-    
-        guard let photoView = photoTaskPhotoVC.photoView else {
+        guard let photoView = testVC.photoView else {
             print("Error PhotoView photoView not found")
             return
         }
-        guard let mainView = photoView.photoView else {
-            print("Error PhotoView mainView not found")
+        
+        guard let photoImageView = testVC.photoImageView else {
+            print("Error PhotoView photoImageView not found")
             return
         }
-        guard let photoImageView = photoView.photoImageView else {
-            print("Error PhotoView photoImageView not found")
-           return
-        }
-        photoView.delegate = self
+        
+        let mainView = photoView
+        photoView.removeFromSuperview()
+
+   //      photoView.delegate = self
+        
         photoImageView.image = image
         mainView.layer.cornerRadius = layerCornerRadius
         mainView.clipsToBounds = true

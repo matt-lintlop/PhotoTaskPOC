@@ -12,11 +12,10 @@ protocol PhotoTaskPhotoViewDelegate: AnyObject {
     func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView)
 }
 
-class PhotoTaskPhotoView : UIViewFromNib {
+class PhotoTaskPhotoView : UIView {
     @IBOutlet weak var photoView: PhotoTaskPhotoView!
     @IBOutlet weak var photoImageView: UIImageView!
     
-    override var nibName: String { return "PhotoTaskPhotoView" }
     weak var delegate: PhotoTaskPhotoViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
