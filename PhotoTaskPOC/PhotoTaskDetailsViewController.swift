@@ -94,8 +94,6 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         
         let mainView = photoView
         photoView.removeFromSuperview()
-
-   //      photoView.delegate = self
         
         photoImageView.image = image
         mainView.layer.cornerRadius = layerCornerRadius
@@ -237,7 +235,7 @@ extension PhotoTaskDetailsViewController: CardViewControllerDelegate {
 
 extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
-    func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
+    func photoViewWasDeleted(_ deletedPhotoView: UIView) {
         print("PhotoView was deleted: \(deletedPhotoView)")
     }
 }

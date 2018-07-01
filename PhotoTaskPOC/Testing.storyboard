@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVA-vG-Lsb" userLabel="PhotoView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVA-vG-Lsb" userLabel="PhotoView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
                                 <rect key="frame" x="88" y="210" width="80" height="80"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="uef-KX-uI1" userLabel="Photo Image View">
@@ -40,6 +40,9 @@
                                             <constraint firstAttribute="width" constant="25" id="ns6-1w-iMw"/>
                                         </constraints>
                                         <state key="normal" image="closeBlack"/>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="qtu-SZ-TfZ" eventType="touchUpInside" id="Q5z-w3-6op"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
