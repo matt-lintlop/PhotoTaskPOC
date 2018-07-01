@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target">
+            <connections>
+                <outlet property="photoView" destination="ghu-nF-rFu" id="EbL-u5-G7T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghu-nF-rFu" userLabel="PhotoView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
+                    <rect key="frame" x="117" y="165" width="80" height="80"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ5-Ml-8Ms" userLabel="Photo Image View">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-Ue-svC">
+                            <rect key="frame" x="50" y="5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="RQh-Pe-jQS"/>
+                                <constraint firstAttribute="height" constant="25" id="VjE-lJ-DSs"/>
+                            </constraints>
+                            <state key="normal" image="closeBlack"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ZJ5-Ml-8Ms" firstAttribute="leading" secondItem="ghu-nF-rFu" secondAttribute="leading" id="1OR-OE-2D0"/>
+                        <constraint firstItem="I2P-Ue-svC" firstAttribute="top" secondItem="ghu-nF-rFu" secondAttribute="top" constant="5" id="Cd4-zK-C55"/>
+                        <constraint firstAttribute="bottom" secondItem="ZJ5-Ml-8Ms" secondAttribute="bottom" id="Dga-A2-1Yr"/>
+                        <constraint firstAttribute="width" constant="80" id="UQL-6n-Ch7"/>
+                        <constraint firstAttribute="trailing" secondItem="ZJ5-Ml-8Ms" secondAttribute="trailing" id="bKE-0V-YQj"/>
+                        <constraint firstAttribute="height" constant="80" id="daL-ac-z7G"/>
+                        <constraint firstItem="ZJ5-Ml-8Ms" firstAttribute="top" secondItem="ghu-nF-rFu" secondAttribute="top" id="hYk-cI-la8"/>
+                        <constraint firstAttribute="trailing" secondItem="I2P-Ue-svC" secondAttribute="trailing" constant="5" id="usu-nq-kbT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ghu-nF-rFu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="117" id="Sp4-ZD-baq"/>
+                <constraint firstItem="ghu-nF-rFu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="145" id="cqm-pD-KaD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeBlack" width="48" height="48"/>
+        <image name="plus" width="159" height="159"/>
+    </resources>
+</document>

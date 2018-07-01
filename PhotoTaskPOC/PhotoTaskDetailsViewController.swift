@@ -63,7 +63,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
             heightConstraint
             ])
 
-        photoView.backgroundColor = UIColor.gray    // TESTING
+        photoView.backgroundColor = UIColor.clear
         photosStackView.insertArrangedSubview(photoView, at: 0)
         setAutoLayoutConstraints()
     }
