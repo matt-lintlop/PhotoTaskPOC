@@ -267,24 +267,78 @@
             </objects>
             <point key="canvasLocation" x="1541" y="59"/>
         </scene>
-        <!--Photo Task Photo View Controller-->
-        <scene sceneID="WWB-LE-Ubo">
+        <!--Testing-->
+        <scene sceneID="4lG-9o-hCj">
             <objects>
-                <viewController storyboardIdentifier="PhotoTaskPhotoViewController" id="RqB-l4-w36" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qJM-yT-G8m">
+                <viewController storyboardIdentifier="TestingViewController" title="Testing" id="oXt-dO-jeH" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Qb-lT-nIj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="7p2-XW-LWd"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dM-BC-G40">
+                                <rect key="frame" x="101" y="373.5" width="118" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="gml-g1-8Ee"/>
+                                    <constraint firstAttribute="height" constant="21" id="pB2-kY-V0C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqv-9I-HEJ" userLabel="PhotoView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
+                                <rect key="frame" x="88" y="210" width="80" height="80"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-ET-9ek" userLabel="Photo Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2t-UW-gJG">
+                                        <rect key="frame" x="50" y="5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="jQT-5u-LDY"/>
+                                            <constraint firstAttribute="width" constant="25" id="wph-E0-Kju"/>
+                                        </constraints>
+                                        <state key="normal" image="closeBlack"/>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="oXt-dO-jeH" eventType="touchUpInside" id="eZ5-ZL-GC3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="v2t-UW-gJG" firstAttribute="top" secondItem="Fqv-9I-HEJ" secondAttribute="top" constant="5" id="4L8-vf-giA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q4W-ET-9ek" secondAttribute="trailing" id="Fh4-BI-0iG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q4W-ET-9ek" secondAttribute="bottom" id="PcL-0M-ZB7"/>
+                                    <constraint firstAttribute="trailing" secondItem="v2t-UW-gJG" secondAttribute="trailing" constant="5" id="Pv3-Ye-q2F"/>
+                                    <constraint firstItem="Q4W-ET-9ek" firstAttribute="top" secondItem="Fqv-9I-HEJ" secondAttribute="top" id="RCT-re-jay"/>
+                                    <constraint firstAttribute="width" constant="80" id="TlC-MF-6Ap"/>
+                                    <constraint firstAttribute="height" constant="80" id="sLY-WS-jGL"/>
+                                    <constraint firstItem="Q4W-ET-9ek" firstAttribute="leading" secondItem="Fqv-9I-HEJ" secondAttribute="leading" id="y86-zl-pQd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1dM-BC-G40" firstAttribute="centerX" secondItem="3Qb-lT-nIj" secondAttribute="centerX" id="G5A-Wx-Eqq"/>
+                            <constraint firstItem="Fqv-9I-HEJ" firstAttribute="leading" secondItem="t98-DK-HD5" secondAttribute="leading" constant="88" id="arK-ad-diZ"/>
+                            <constraint firstItem="Fqv-9I-HEJ" firstAttribute="top" secondItem="t98-DK-HD5" secondAttribute="top" constant="190" id="ib0-4A-Byb"/>
+                            <constraint firstItem="1dM-BC-G40" firstAttribute="centerY" secondItem="3Qb-lT-nIj" secondAttribute="centerY" id="jqX-Ps-FB8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t98-DK-HD5"/>
                     </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="Q4W-ET-9ek" id="Eqy-Lp-tzu"/>
+                        <outlet property="photoView" destination="Fqv-9I-HEJ" id="uxe-Ag-k65"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7Q-Hu-xP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-rL-KyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="59"/>
+            <point key="canvasLocation" x="2578" y="59"/>
         </scene>
     </scenes>
     <resources>
+        <image name="closeBlack" width="48" height="48"/>
         <image name="closeGray" width="48" height="48"/>
         <image name="plus" width="159" height="159"/>
+        <image name="testPhoto" width="74" height="74"/>
     </resources>
 </document>

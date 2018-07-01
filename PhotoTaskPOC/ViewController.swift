@@ -14,15 +14,5 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    @IBAction func buttonPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Testing", bundle: nil)
-        let testVC = storyboard.instantiateViewController(withIdentifier: "TestingViewController")
-        let view = testVC.view
-        print(testVC)
-        present(testVC, animated: true, completion: nil)
-        //        print(view ?? "no view")
-    }
-    
 }
 
