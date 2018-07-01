@@ -191,12 +191,6 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         print("Close pressed.")
   }
 
-    //
-//        guard let cardViewController = parent as? CardViewController else {
-//            return
-//        }
-//        cardViewController.removeChildViewController()
-//     }
 }
 
 extension PhotoTaskViewController: CardViewControllerDelegate {

@@ -20,24 +20,50 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-c5-9RP" userLabel="ContentView">
-                    <rect key="frame" x="128" y="80" width="119" height="109"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-c5-9RP" userLabel="MainView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
+                    <rect key="frame" x="128" y="80" width="80" height="80"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-a6-PQ7" userLabel="Photo Image View">
-                            <rect key="frame" x="0.0" y="0.0" width="119" height="109"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-a6-PQ7" userLabel="Photo Image View">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvy-zf-axS">
+                            <rect key="frame" x="50" y="5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="lYb-uA-nZb"/>
+                                <constraint firstAttribute="height" constant="25" id="m11-GH-Ni7"/>
+                            </constraints>
+                            <state key="normal" title="Close" image="close"/>
+                            <connections>
+                                <action selector="closePhotoButtonPressedOutside:" destination="-1" eventType="touchUpOutside" id="R5N-3g-ap9"/>
+                                <action selector="closePhotoViewButtonPressed:" destination="-1" eventType="touchUpInside" id="YoG-H2-8lN"/>
+                                <action selector="closePressed:" destination="-1" eventType="touchUpInside" id="fER-MJ-6QS"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vvy-zf-axS" firstAttribute="top" secondItem="CH0-c5-9RP" secondAttribute="top" constant="5" id="09W-ca-C60"/>
+                        <constraint firstItem="LcX-a6-PQ7" firstAttribute="leading" secondItem="CH0-c5-9RP" secondAttribute="leading" id="9CS-uY-UTW"/>
+                        <constraint firstAttribute="trailing" secondItem="vvy-zf-axS" secondAttribute="trailing" constant="5" id="Cpu-LH-Jva"/>
+                        <constraint firstAttribute="width" constant="80" id="Lkf-ud-lbh"/>
+                        <constraint firstAttribute="bottom" secondItem="LcX-a6-PQ7" secondAttribute="bottom" id="S9Z-mg-ECZ"/>
+                        <constraint firstAttribute="height" constant="80" id="U9Z-bH-zra"/>
+                        <constraint firstItem="LcX-a6-PQ7" firstAttribute="top" secondItem="CH0-c5-9RP" secondAttribute="top" id="tGw-Fu-suv"/>
+                        <constraint firstAttribute="trailing" secondItem="LcX-a6-PQ7" secondAttribute="trailing" id="wMD-Zs-Ode"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CH0-c5-9RP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="128" id="6T5-FG-EWA"/>
+                <constraint firstItem="CH0-c5-9RP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="60" id="lnf-cy-3Jy"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="124.5" y="53.5"/>
         </view>
     </objects>
     <resources>
+        <image name="close" width="48" height="48"/>
         <image name="plus" width="159" height="159"/>
     </resources>
 </document>
