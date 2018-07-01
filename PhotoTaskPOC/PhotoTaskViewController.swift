@@ -84,6 +84,7 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
             print("Error PhotoView photoImageView not found")
            return
         }
+        photoView.delegate = self
         photoImageView.image = image
         mainView.layer.cornerRadius = layerCornerRadius
         mainView.clipsToBounds = true
@@ -198,6 +199,10 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         print("Close pressed.")
     }
     
+    // MARK: PhotoTaskPhotoViewDelegate
+    
+    
+    
     // MARK: Debugging
     
     private func debugScrolling() {
@@ -222,7 +227,11 @@ extension PhotoTaskViewController: CardViewControllerDelegate {
     func heightForCardHeader(cardViewController: CardViewController) -> CGFloat {
         return Constants.topAnchorOffset
     }
-    
 }
 
-
+extension PhotoTaskViewController: PhotoTaskPhotoViewDelegate {
+    
+    func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
+        print("PhotoView was deleted: \(deletedPhotoView)")
+    }
+}
