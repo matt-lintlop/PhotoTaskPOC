@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="width" constant="22" id="Nab-YJ-tTh"/>
                                     <constraint firstAttribute="height" constant="22" id="YSm-MD-7Ip"/>
                                 </constraints>
-                                <state key="normal" image="close"/>
+                                <state key="normal" image="closeGray"/>
                                 <connections>
                                     <action selector="closeButtonPressed:" destination="Wx1-Of-JGN" eventType="touchUpInside" id="o9u-Ai-wji"/>
                                 </connections>
@@ -269,7 +269,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="48" height="48"/>
+        <image name="closeGray" width="48" height="48"/>
         <image name="plus" width="159" height="159"/>
     </resources>
 </document>
