@@ -49,6 +49,8 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         addPhotoButton.clipsToBounds = true
         
         setupStackView()
+        
+        debugScrolling()        // TESTING
     }
      
     func setupStackView() {
@@ -64,7 +66,7 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
             heightConstraint
             ])
 
-        photoView.backgroundColor = UIColor.clear
+        photoView.backgroundColor = UIColor.gray    // TESTING
         photosStackView.insertArrangedSubview(photoView, at: 0)
         setAutoLayoutConstraints()
     }
@@ -90,24 +92,27 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.insertArrangedSubview(mainView, at: 0)
         setAutoLayoutConstraints()
+
+        debugScrolling()        // TESTING
     }
    
     private func setAutoLayoutConstraints() {
         guard photosStackView != nil else {
             return
         }
-        let scrollViewWidth = photosScrollView.bounds.size.width
+        let scrollViewWidth = photosScrollView.frame.size.width
         let subViewCount = photosStackView.arrangedSubviews.count
-        if (subViewCount <= 1) {
+        if (subViewCount == 0) {
             photosStackViewContentWidthConstraint.constant = scrollViewWidth
+            print("Computed stackViewtWidth = \(scrollViewWidth)")
         }
         else {
-            let photoView = photosStackView.arrangedSubviews.first!
-            let photoViewWidth = photoView.bounds.size.width
+            let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
             let totalSpacing:CGFloat = CGFloat(subViewCount-1) * photosStackView.spacing
             var stackViewtWidth: CGFloat = (CGFloat(subViewCount-1) * photoViewWidth) + totalSpacing
             stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
             photosStackViewContentWidthConstraint.constant = stackViewtWidth
+            print("Computed stackViewtWidth = \(stackViewtWidth)")
         }
     }
     
