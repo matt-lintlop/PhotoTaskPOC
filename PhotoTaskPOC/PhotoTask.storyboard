@@ -267,24 +267,14 @@
             </objects>
             <point key="canvasLocation" x="1541" y="59"/>
         </scene>
-        <!--Testing-->
+        <!--PhotoTaskPhotoViewController-->
         <scene sceneID="4lG-9o-hCj">
             <objects>
-                <viewController storyboardIdentifier="TestingViewController" title="Testing" id="oXt-dO-jeH" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoTaskPhotoViewController" title="PhotoTaskPhotoViewController" id="oXt-dO-jeH" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Qb-lT-nIj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dM-BC-G40">
-                                <rect key="frame" x="101" y="373.5" width="118" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="118" id="gml-g1-8Ee"/>
-                                    <constraint firstAttribute="height" constant="21" id="pB2-kY-V0C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqv-9I-HEJ" userLabel="PhotoView" customClass="PhotoTaskPhotoView" customModule="PhotoTaskPOC" customModuleProvider="target">
                                 <rect key="frame" x="88" y="210" width="80" height="80"/>
                                 <subviews>
@@ -316,12 +306,10 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1dM-BC-G40" firstAttribute="centerX" secondItem="3Qb-lT-nIj" secondAttribute="centerX" id="G5A-Wx-Eqq"/>
                             <constraint firstItem="Fqv-9I-HEJ" firstAttribute="leading" secondItem="t98-DK-HD5" secondAttribute="leading" constant="88" id="arK-ad-diZ"/>
                             <constraint firstItem="Fqv-9I-HEJ" firstAttribute="top" secondItem="t98-DK-HD5" secondAttribute="top" constant="190" id="ib0-4A-Byb"/>
-                            <constraint firstItem="1dM-BC-G40" firstAttribute="centerY" secondItem="3Qb-lT-nIj" secondAttribute="centerY" id="jqX-Ps-FB8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t98-DK-HD5"/>
                     </view>
