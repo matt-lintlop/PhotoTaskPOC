@@ -19,6 +19,10 @@ class PhotoTaskPhotoView : UIViewFromNib {
     override var nibName: String { return "PhotoTaskPhotoView" }
     weak var delegate: PhotoTaskPhotoViewDelegate?
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     @IBAction func closePhotoViewButtonPressed(_ sender: Any) {
         delegate?.photoViewWasDeleted(self)
         print("Close Photo Button pressed: delegate = \(delegate)")

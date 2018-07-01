@@ -23,9 +23,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4xW-nK-DVz" kind="popoverPresentation" popoverAnchorView="4Qc-SU-1jQ" id="cEX-SL-jug">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zMN-Ro-Ndp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,15 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="117"/>
-        </scene>
-        <!--PhotoTask-->
-        <scene sceneID="Keo-v2-P1s">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PhotoTask" id="4xW-nK-DVz" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ucl-Rv-qZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="521" y="-114"/>
+            <point key="canvasLocation" x="-28.057553956834532" y="116.54676258992806"/>
         </scene>
     </scenes>
 </document>

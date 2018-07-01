@@ -71,8 +71,27 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     func addPhoto(withImage image: UIImage) {
         let stackViewSize = photosStackView.bounds.size
         let height = stackViewSize.height
-        let photoImageFrame = CGRect(x: 0, y: 0, width: height, height: height)
-        let photoView = PhotoTaskPhotoView(frame: photoImageFrame)
+   
+        
+        let storyboard = UIStoryboard(name: "Testing", bundle: nil)
+        let testVC = storyboard.instantiateViewController(withIdentifier: "TestingViewController")
+        let view = testVC.view
+        print(testVC)
+        //
+        
+        
+//        let storyboard = UIStoryboard(name: "PhotoTask", bundle: nil)
+        guard let photoTaskPhotoVC = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
+            print("Error PhotoTaskPhotoViewController not found")
+          return
+        }
+       
+//        let view = photoTaskPhotoVC.view                // sets the outlet variabless
+    
+        guard let photoView = photoTaskPhotoVC.photoView else {
+            print("Error PhotoView photoView not found")
+            return
+        }
         guard let mainView = photoView.photoView else {
             print("Error PhotoView mainView not found")
             return

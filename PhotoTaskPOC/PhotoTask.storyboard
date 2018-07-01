@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wx1-Of-JGN">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="splitview1_3"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="PhotoTaskViewController" id="Wx1-Of-JGN" customClass="PhotoTaskDetailsViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1RZ-zl-bs3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Window" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvq-hF-ppq" userLabel="Photo Task Title Label">
@@ -33,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Api-kH-89P">
-                                <rect key="frame" x="562" y="30" width="22" height="22"/>
+                                <rect key="frame" x="282" y="30" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="Nab-YJ-tTh"/>
                                     <constraint firstAttribute="height" constant="22" id="YSm-MD-7Ip"/>
@@ -44,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-Nu-KoP">
-                                <rect key="frame" x="16" y="131.5" width="568" height="20.5"/>
+                                <rect key="frame" x="16" y="131.5" width="288" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="StatusText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="20.5" id="oCS-NS-sMz"/>
@@ -64,14 +67,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-fx-0CB" userLabel="Status Label Underline">
-                                <rect key="frame" x="16" y="120.5" width="568" height="1"/>
+                                <rect key="frame" x="16" y="120.5" width="288" height="1"/>
                                 <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="1" id="dec-Tn-vLu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nn-ra-ovE">
-                                <rect key="frame" x="16" y="167" width="568" height="369"/>
+                                <rect key="frame" x="16" y="167" width="288" height="531"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaA-0P-rRX">
                                         <rect key="frame" x="0.0" y="8" width="121.5" height="19.5"/>
@@ -80,14 +83,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9N-Fs-8vk" userLabel="Instructions Label Underline">
-                                        <rect key="frame" x="0.0" y="37.5" width="568" height="1"/>
+                                        <rect key="frame" x="0.0" y="37.5" width="288" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="yU8-bf-zvL"/>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1IU-CV-VEU">
-                                        <rect key="frame" x="0.0" y="48.5" width="568" height="121"/>
+                                        <rect key="frame" x="0.0" y="48.5" width="288" height="283"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="kHa-CO-wXy"/>
@@ -96,7 +99,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-Uw-Ogl">
-                                        <rect key="frame" x="164" y="331" width="240" height="30"/>
+                                        <rect key="frame" x="24" y="493" width="240" height="30"/>
                                         <color key="backgroundColor" red="0.1803921568627451" green="0.49019607843137253" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="30" id="LlY-nr-hzH"/>
@@ -110,14 +113,14 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0D-Pq-g9w" userLabel="Photos Label Underline">
-                                        <rect key="frame" x="0.0" y="219" width="568" height="1"/>
+                                        <rect key="frame" x="0.0" y="381" width="288" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="v3W-ue-Hlk"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHOTOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84f-zi-ujy">
-                                        <rect key="frame" x="0.0" y="189.5" width="67.5" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="67.5" height="19.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="19.5" id="5bw-Xp-1Kb"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="ahY-J4-Kbg"/>
@@ -127,10 +130,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTF-xP-va0" userLabel="Photos Container View">
-                                        <rect key="frame" x="0.0" y="231" width="568" height="80"/>
+                                        <rect key="frame" x="0.0" y="393" width="288" height="80"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-6k-RoB" userLabel="Photos Scroll View">
-                                                <rect key="frame" x="88" y="0.0" width="480" height="80"/>
+                                                <rect key="frame" x="88" y="0.0" width="200" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIT-UD-WJm" userLabel="Content View">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
@@ -262,7 +265,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deT-E1-Lzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156.875" y="106.25"/>
+            <point key="canvasLocation" x="1541" y="59"/>
+        </scene>
+        <!--Photo Task Photo View Controller-->
+        <scene sceneID="WWB-LE-Ubo">
+            <objects>
+                <viewController storyboardIdentifier="PhotoTaskPhotoViewController" id="RqB-l4-w36" customClass="PhotoTaskPhotoViewController" customModule="PhotoTaskPOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qJM-yT-G8m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7p2-XW-LWd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7Q-Hu-xP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2524" y="59"/>
         </scene>
     </scenes>
     <resources>
