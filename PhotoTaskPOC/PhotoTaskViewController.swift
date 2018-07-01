@@ -30,6 +30,8 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
     
     @IBOutlet weak var addPhotoButton: UIButton!
     
+    @IBOutlet weak var scrollViewContentView: UIView!
+    
     let placeHolderText = "PhotoTask.StoreNotes.DefaultText".localized
     let layerCornerRadius: CGFloat = 8.0
     
@@ -189,7 +191,24 @@ class PhotoTaskViewController: UIViewController, UITextViewDelegate, UIImagePick
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         print("Close pressed.")
-  }
+    }
+    
+    // MARK: Debugging
+    
+    private func debugScrolling() {
+        print(".......................................................")
+        print("photosStackViewContentWidthConstraint = \(photosStackViewContentWidthConstraint)")
+        print("# arranged subviews: \(photosStackView.arrangedSubviews.count)")
+        
+        let scrollViewBounds = photosScrollView.bounds
+        print("scrollViewBounds size = \(scrollViewBounds.size)")
+        
+        let stackViewBounds = photosStackView.bounds
+        print("stackViewBounds size = \(stackViewBounds.size)")
+        
+        let contentBounds = scrollViewContentView.bounds
+        print("contentBounds size = \(contentBounds.size)")
+    }
 
 }
 
