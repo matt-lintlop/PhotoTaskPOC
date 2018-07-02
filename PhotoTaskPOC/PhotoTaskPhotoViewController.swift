@@ -12,6 +12,7 @@ class PhotoTaskPhotoViewController: UIViewController {
     
     @IBOutlet weak var photoView: PhotoTaskPhotoView!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var deletePhotoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

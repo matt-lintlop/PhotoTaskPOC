@@ -68,43 +68,48 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         setAutoLayoutConstraints()
     }
 
-    func addPhoto(withImage image: UIImage) {
+    func addPhoto(_ photoImage: UIImage) {
         let stackViewSize = photosStackView.bounds.size
         let height = stackViewSize.height
-   
         
         let storyboard = UIStoryboard(name: "PhotoTask", bundle: nil)
-        guard let testVC: PhotoTaskPhotoViewController = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
-            return
-        }
-        let view = testVC.view
-        print(testVC)
-        //
-        
-        
-        guard let photoView = testVC.photoView else {
-            print("Error PhotoView photoView not found")
+        guard let photoViewController = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
             return
         }
         
-        guard let photoImageView = testVC.photoImageView else {
-            print("Error PhotoView photoImageView not found")
+        let view = photoViewController.view     // sets IBOutlets in PhotoTaskPhotoViewController
+        
+        guard let photoView = photoViewController.photoView else {
+            print("Error: PhotoTaskPhotoView not found")
             return
         }
+        photoView.deletePhotoButton = photoViewController.deletePhotoButton
         
-        let mainView = photoView
-        photoView.removeFromSuperview()
-        
-        photoImageView.image = image
-        mainView.layer.cornerRadius = layerCornerRadius
-        mainView.clipsToBounds = true
-        let widthConstraint = mainView.widthAnchor.constraint(equalToConstant: height)
-        let heightConstraint = mainView.heightAnchor.constraint(equalToConstant: height)
+        guard let photoImageView = photoViewController.photoImageView else {
+            print("Error: photoImageView not found")
+            return
+        }
+        photoImageView.image = photoImage
+        photoView.layer.cornerRadius = layerCornerRadius
+        photoView.clipsToBounds = true
+        let widthConstraint = photoView.widthAnchor.constraint(lessThanOrEqualToConstant: height)
+        let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: height)
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
-        photosStackView.insertArrangedSubview(mainView, at: 0)
+        photosStackView.insertArrangedSubview(photoView, at: 0)
+        setPhotoViewTags()
         setAutoLayoutConstraints()
     }
-   
+    
+    private func setPhotoViewTags() {
+        let arrangedSubViews = photosStackView.arrangedSubviews
+        for (index, photoView) in arrangedSubViews.enumerated() {
+            if let photoView = photoView as? PhotoTaskPhotoView {
+                // set the PhotoView tag = index in photosStackView's arranged subviews.
+                photoView.tag = index
+            }
+        }
+    }
+
     private func setAutoLayoutConstraints() {
         guard photosStackView != nil else {
             return
@@ -170,7 +175,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         let photoImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        addPhoto(withImage: photoImage)
+        addPhoto(photoImage)
         picker.dismiss(animated: true, completion: nil)
     }
     
