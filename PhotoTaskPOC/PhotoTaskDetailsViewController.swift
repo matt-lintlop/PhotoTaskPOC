@@ -16,6 +16,8 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         static let topAnchorOffset: CGFloat = 10
     }
     
+    // MARK: Outlets
+    
     @IBOutlet weak var photoTaskTitleLabel: UILabel!
     @IBOutlet weak var photoTaskLocationLabel: UILabel!
     @IBOutlet weak var photoTaskInstructionsTextField: UITextView!
@@ -24,17 +26,19 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     @IBOutlet weak var lowerSectionView: UIView!
     @IBOutlet weak var submitPhotoTaskButton: UIButton!
     @IBOutlet weak var photosStackViewContentWidthConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var photosScrollView: UIScrollView!
-    var imagePicker: UIImagePickerController?
-    
     @IBOutlet weak var addPhotoButton: UIButton!
-    
     @IBOutlet weak var scrollViewContentView: UIView!
     
+    // MARK: Properties
+    
+    var imagePicker: UIImagePickerController?
     let placeHolderText = "PhotoTask.StoreNotes.DefaultText".localized
     let layerCornerRadius: CGFloat = 8.0
     
+ 
+    // MARK: View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,7 +71,44 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         photosStackView.insertArrangedSubview(photoView, at: 0)
         setAutoLayoutConstraints()
     }
+    
+    // MARK: Auto Layout
 
+    private func setAutoLayoutConstraints() {
+        guard photosStackView != nil else {
+            return
+        }
+        let scrollViewWidth = photosScrollView.frame.size.width
+        let subViewCount = photosStackView.arrangedSubviews.count
+        if (subViewCount == 0) {
+            photosStackViewContentWidthConstraint.constant = scrollViewWidth
+        }
+        else {
+            let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
+            let totalSpacing:CGFloat = CGFloat(subViewCount-1) * photosStackView.spacing
+            var stackViewtWidth: CGFloat = (CGFloat(subViewCount-1) * photoViewWidth) + totalSpacing
+            stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
+            photosStackViewContentWidthConstraint.constant = stackViewtWidth
+        }
+    }
+    
+    // MARK: Action Handlers
+    
+    @IBAction func submitPhotoTaskPressed(_ sender: Any) {
+        print("Submit Photo Task Pressed")
+    }
+    
+    @IBAction func addPhotoPressed(_ sender: Any) {
+        requestCameraAccess()
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        print("PhotoTaskDetailsViewController: Close pressed.")
+    }
+    
+
+    // MARK: Photos
+    
     func addPhoto(_ photoImage: UIImage) {
         let stackViewSize = photosStackView.bounds.size
         let height = stackViewSize.height
@@ -98,33 +139,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         photosStackView.insertArrangedSubview(photoView, at: 0)
         setAutoLayoutConstraints()
     }
- 
-    private func setAutoLayoutConstraints() {
-        guard photosStackView != nil else {
-            return
-        }
-        let scrollViewWidth = photosScrollView.frame.size.width
-        let subViewCount = photosStackView.arrangedSubviews.count
-        if (subViewCount == 0) {
-            photosStackViewContentWidthConstraint.constant = scrollViewWidth
-        }
-        else {
-            let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
-            let totalSpacing:CGFloat = CGFloat(subViewCount-1) * photosStackView.spacing
-            var stackViewtWidth: CGFloat = (CGFloat(subViewCount-1) * photoViewWidth) + totalSpacing
-            stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
-            photosStackViewContentWidthConstraint.constant = stackViewtWidth
-        }
-    }
-    
-    @IBAction func submitPhotoTaskPressed(_ sender: Any) {
-        print("Submit Photo Task Pressed")
-    }
-    
-    @IBAction func addPhotoPressed(_ sender: Any) {
-        requestCameraAccess()
-    }
-    
+
     func takePhoto() {
         imagePicker =  UIImagePickerController()
         guard let imagePicker = imagePicker else {
@@ -173,6 +188,8 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         picker.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: UITextViewDelegate
+    
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         
         textView.textColor = .black
@@ -194,10 +211,6 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         return true
     }
-    
-    @IBAction func closeButtonPressed(_ sender: Any) {
-        print("PhotoTaskDetailsViewController: Close pressed.")
-    }
 }
 
 extension PhotoTaskDetailsViewController: CardViewControllerDelegate {
@@ -213,5 +226,6 @@ extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
     func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
         print("PhotoTaskDetailsViewController: PhotoView was deleted: \(deletedPhotoView)")
+        deletedPhotoView.isHidden = true
     }
 }
