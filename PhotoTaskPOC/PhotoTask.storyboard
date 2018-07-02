@@ -291,7 +291,7 @@
                                             <constraint firstAttribute="height" constant="25" identifier="$PhotoView.CloseButton.Height$" id="jQT-5u-LDY"/>
                                             <constraint firstAttribute="width" constant="25" identifier="$PhotoView.CloseButton.Width" id="wph-E0-Kju"/>
                                         </constraints>
-                                        <state key="normal" image="closeBlack"/>
+                                        <state key="normal" image="closeGray"/>
                                         <connections>
                                             <action selector="closeButtonPressed:" destination="oXt-dO-jeH" eventType="touchUpInside" id="eZ5-ZL-GC3"/>
                                         </connections>
@@ -329,7 +329,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="closeBlack" width="48" height="48"/>
         <image name="closeGray" width="48" height="48"/>
         <image name="plus" width="159" height="159"/>
         <image name="testPhoto" width="74" height="74"/>

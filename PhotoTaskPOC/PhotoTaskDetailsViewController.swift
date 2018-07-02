@@ -79,7 +79,6 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
             return
         }
         
-        // TODO Count deleted & active Photo Views's
         let deletedPhotoViewCount = photosStackView.arrangedSubviews.reduce(0) { (count, view) -> Int in
             guard let photoView = view as? PhotoTaskPhotoView else {
                 return count
@@ -95,8 +94,8 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         
         let scrollViewWidth = photosScrollView.frame.size.width
         let subViewCount = photosStackView.arrangedSubviews.count
-        if (subViewCount == 0) {
-            photosStackViewContentWidthConstraint.constant = 0
+        if (subViewCount <= 1) {
+            photosStackViewContentWidthConstraint.constant = scrollViewWidth
         }
         else {
             let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
@@ -105,8 +104,13 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
             stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
             photosStackViewContentWidthConstraint.constant = stackViewtWidth
         }
-        
-        print("setAutoLayoutConstraints: deletedPhotoViewCount = \(deletedPhotoViewCount), visiblePhotoViewCount = \(visiblePhotoViewCount), photosStackViewContentWidthConstraint = \(photosStackViewContentWidthConstraint)")
+    
+        print("\n....................................................")
+        print("$$$ setAutoLayoutConstraints: deletedPhotoViewCount = \(deletedPhotoViewCount), visiblePhotoViewCount = \(visiblePhotoViewCount), photosStackViewContentWidthConstraint.constant = \(photosStackViewContentWidthConstraint.constant)\n, photosStackView.bounds.size = \(photosStackView.bounds.size)\n,scrollViewContentView.bounds.size = \(scrollViewContentView.bounds.size)\n, photosScrollView.bounds.size = \(photosScrollView.bounds.size)\n")
+  
+        photosStackView.layoutIfNeeded()
+        scrollViewContentView.layoutIfNeeded()
+        photosScrollView.layoutIfNeeded()
     }
     
     // MARK: Action Handlers
