@@ -84,7 +84,6 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
             print("Error: PhotoTaskPhotoView not found")
             return
         }
-        photoView.deletePhotoButton = photoViewController.deletePhotoButton
         
         guard let photoImageView = photoViewController.photoImageView else {
             print("Error: photoImageView not found")

@@ -314,7 +314,6 @@
                         <viewLayoutGuide key="safeArea" id="t98-DK-HD5"/>
                     </view>
                     <connections>
-                        <outlet property="deletePhotoButton" destination="v2t-UW-gJG" id="hZW-6i-UzT"/>
                         <outlet property="photoImageView" destination="Q4W-ET-9ek" id="Eqy-Lp-tzu"/>
                         <outlet property="photoView" destination="Fqv-9I-HEJ" id="uxe-Ag-k65"/>
                     </connections>

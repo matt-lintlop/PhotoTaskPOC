@@ -9,9 +9,7 @@
 import UIKit
 
 class PhotoTaskPhotoView : UIView {
-    
-    weak var deletePhotoButton: UIButton?
-    
+        
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
