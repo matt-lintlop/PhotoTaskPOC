@@ -67,7 +67,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
             heightConstraint
             ])
 
-        photoView.backgroundColor = UIColor.green
+        photoView.backgroundColor = UIColor.clear
         photosStackView.insertArrangedSubview(photoView, at: 0)
         setAutoLayoutConstraints()
     }
@@ -94,22 +94,24 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         
         let scrollViewWidth = photosScrollView.frame.size.width
         let subViewCount = photosStackView.arrangedSubviews.count
-        if (subViewCount <= 1) {
+        if (visiblePhotoViewCount <= 1) {
             photosStackViewContentWidthConstraint.constant = scrollViewWidth
         }
         else {
             let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
-            let totalSpacing:CGFloat = CGFloat(visiblePhotoViewCount-1) * photosStackView.spacing
+            let totalSpacing:CGFloat = CGFloat(visiblePhotoViewCount) * photosStackView.spacing
             var stackViewtWidth: CGFloat = (CGFloat(visiblePhotoViewCount-1) * photoViewWidth) + totalSpacing
+            
+            if deletedPhotoViewCount > 0 {
+                stackViewtWidth += photosStackView.spacing
+            }
+            
             stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
             photosStackViewContentWidthConstraint.constant = stackViewtWidth
         }
-    
-        print("\n....................................................")
-        print("$$$ setAutoLayoutConstraints: deletedPhotoViewCount = \(deletedPhotoViewCount), visiblePhotoViewCount = \(visiblePhotoViewCount), photosStackViewContentWidthConstraint.constant = \(photosStackViewContentWidthConstraint.constant)\n, photosStackView.bounds.size = \(photosStackView.bounds.size)\n,scrollViewContentView.bounds.size = \(scrollViewContentView.bounds.size)\n, photosScrollView.bounds.size = \(photosScrollView.bounds.size)\n")
   
-        photosStackView.layoutIfNeeded()
         scrollViewContentView.layoutIfNeeded()
+        photosStackView.layoutIfNeeded()
         photosScrollView.layoutIfNeeded()
     }
     
@@ -155,6 +157,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         photoView.layer.cornerRadius = layerCornerRadius
         photoView.clipsToBounds = true
         let widthConstraint = photoView.widthAnchor.constraint(lessThanOrEqualToConstant: height)
+        widthConstraint.priority = .defaultLow
         let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: height)
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.insertArrangedSubview(photoView, at: 0)
