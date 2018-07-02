@@ -9,8 +9,15 @@
 import UIKit
 
 class PhotoTaskPhotoView : UIView {
-        
+    
+    var isDeleted: Bool {
+        didSet {
+            isHidden = isDeleted
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
+        isDeleted = false
         super.init(coder: aDecoder)
     }
  }

@@ -128,20 +128,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
                                                             </stackView>
                                                         </subviews>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Photos ScrollView.ContetView"/>
                                                         <constraints>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="leading" secondItem="uIT-UD-WJm" secondAttribute="leading" id="6b1-iq-a9S"/>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="top" secondItem="uIT-UD-WJm" secondAttribute="top" id="IBs-Sg-uve"/>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="height" secondItem="uIT-UD-WJm" secondAttribute="height" id="Ihg-HO-3iS"/>
-                                                            <constraint firstAttribute="width" constant="288" id="YBH-nh-vnL"/>
-                                                            <constraint firstAttribute="height" constant="80" id="tfW-3Y-owx"/>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="width" secondItem="uIT-UD-WJm" secondAttribute="width" id="vg1-B8-6ra"/>
+                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="leading" secondItem="uIT-UD-WJm" secondAttribute="leading" identifier="$StackView.Leading$" id="6b1-iq-a9S"/>
+                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="top" secondItem="uIT-UD-WJm" secondAttribute="top" identifier="$StackView.Top$" id="IBs-Sg-uve"/>
+                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="height" secondItem="uIT-UD-WJm" secondAttribute="height" identifier="$StackView.Height$" id="Ihg-HO-3iS"/>
+                                                            <constraint firstAttribute="width" constant="288" identifier="$StackView.Content.Width$" id="YBH-nh-vnL"/>
+                                                            <constraint firstAttribute="height" constant="80" identifier="$StackView.Content.Height$" id="tfW-3Y-owx"/>
+                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="width" secondItem="uIT-UD-WJm" secondAttribute="width" identifier="$StackView.Width$" id="vg1-B8-6ra"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="height" secondItem="Cfn-6k-RoB" secondAttribute="height" id="9P0-Tw-L20"/>
-                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="top" secondItem="Cfn-6k-RoB" secondAttribute="top" id="CJe-VE-MuP"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uIT-UD-WJm" secondAttribute="trailing" id="bGX-CP-w07"/>
+                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="height" secondItem="Cfn-6k-RoB" secondAttribute="height" identifier="$ContentView..Height$" id="9P0-Tw-L20"/>
+                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="top" secondItem="Cfn-6k-RoB" secondAttribute="top" identifier="$.ContentView.Topt$" id="CJe-VE-MuP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uIT-UD-WJm" secondAttribute="trailing" identifier="$Photos.ScrollView.Trailing$" id="bGX-CP-w07"/>
                                                     <constraint firstAttribute="bottom" secondItem="uIT-UD-WJm" secondAttribute="bottom" id="fXs-Ym-cZJ"/>
                                                     <constraint firstItem="uIT-UD-WJm" firstAttribute="leading" secondItem="Cfn-6k-RoB" secondAttribute="leading" id="ua1-cd-oh2"/>
                                                 </constraints>
@@ -158,6 +159,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <accessibility key="accessibilityConfiguration" identifier="AddPhoto.View"/>
                                                 <constraints>
                                                     <constraint firstItem="70j-vW-ml9" firstAttribute="leading" secondItem="tEd-dm-d0u" secondAttribute="leading" id="0zT-lo-9T9"/>
                                                     <constraint firstItem="70j-vW-ml9" firstAttribute="top" secondItem="tEd-dm-d0u" secondAttribute="top" id="M0c-qe-epv"/>
@@ -168,6 +170,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <accessibility key="accessibilityConfiguration" identifier="PhotosContainerView"/>
                                         <constraints>
                                             <constraint firstItem="Cfn-6k-RoB" firstAttribute="leading" secondItem="tEd-dm-d0u" secondAttribute="trailing" constant="8" id="983-ih-q1u"/>
                                             <constraint firstItem="tEd-dm-d0u" firstAttribute="top" secondItem="wTF-xP-va0" secondAttribute="top" id="9pc-sg-1GY"/>
@@ -280,12 +283,13 @@
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-ET-9ek" userLabel="Photo Image View">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="PhotoImageView"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2t-UW-gJG">
                                         <rect key="frame" x="50" y="5" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="jQT-5u-LDY"/>
-                                            <constraint firstAttribute="width" constant="25" id="wph-E0-Kju"/>
+                                            <constraint firstAttribute="height" constant="25" identifier="$PhotoView.CloseButton.Height$" id="jQT-5u-LDY"/>
+                                            <constraint firstAttribute="width" constant="25" identifier="$PhotoView.CloseButton.Width" id="wph-E0-Kju"/>
                                         </constraints>
                                         <state key="normal" image="closeBlack"/>
                                         <connections>
@@ -294,22 +298,23 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PhotoView"/>
                                 <constraints>
-                                    <constraint firstItem="v2t-UW-gJG" firstAttribute="top" secondItem="Fqv-9I-HEJ" secondAttribute="top" constant="5" id="4L8-vf-giA"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q4W-ET-9ek" secondAttribute="trailing" id="Fh4-BI-0iG"/>
-                                    <constraint firstAttribute="bottom" secondItem="Q4W-ET-9ek" secondAttribute="bottom" id="PcL-0M-ZB7"/>
-                                    <constraint firstAttribute="trailing" secondItem="v2t-UW-gJG" secondAttribute="trailing" constant="5" id="Pv3-Ye-q2F"/>
-                                    <constraint firstItem="Q4W-ET-9ek" firstAttribute="top" secondItem="Fqv-9I-HEJ" secondAttribute="top" id="RCT-re-jay"/>
-                                    <constraint firstAttribute="width" constant="80" id="TlC-MF-6Ap"/>
-                                    <constraint firstAttribute="height" constant="80" id="sLY-WS-jGL"/>
-                                    <constraint firstItem="Q4W-ET-9ek" firstAttribute="leading" secondItem="Fqv-9I-HEJ" secondAttribute="leading" id="y86-zl-pQd"/>
+                                    <constraint firstItem="v2t-UW-gJG" firstAttribute="top" secondItem="Fqv-9I-HEJ" secondAttribute="top" constant="5" identifier="$PhotoView.top$" id="4L8-vf-giA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q4W-ET-9ek" secondAttribute="trailing" identifier="$PhotoView.Trailing$" id="Fh4-BI-0iG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q4W-ET-9ek" secondAttribute="bottom" identifier="$PhotoView.bottom$" id="PcL-0M-ZB7"/>
+                                    <constraint firstAttribute="trailing" secondItem="v2t-UW-gJG" secondAttribute="trailing" constant="5" identifier="$PhotoView.Trailing$" id="Pv3-Ye-q2F"/>
+                                    <constraint firstItem="Q4W-ET-9ek" firstAttribute="top" secondItem="Fqv-9I-HEJ" secondAttribute="top" identifier="$PhotoView.top$" id="RCT-re-jay"/>
+                                    <constraint firstAttribute="width" constant="80" identifier="$PhotoView.Width$" id="TlC-MF-6Ap"/>
+                                    <constraint firstAttribute="height" constant="80" identifier="$PhotoView.Height$" id="sLY-WS-jGL"/>
+                                    <constraint firstItem="Q4W-ET-9ek" firstAttribute="leading" secondItem="Fqv-9I-HEJ" secondAttribute="leading" identifier="$PhotoView.leading$" id="y86-zl-pQd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fqv-9I-HEJ" firstAttribute="leading" secondItem="t98-DK-HD5" secondAttribute="leading" id="arK-ad-diZ"/>
-                            <constraint firstItem="Fqv-9I-HEJ" firstAttribute="top" secondItem="t98-DK-HD5" secondAttribute="top" constant="-20" id="ib0-4A-Byb"/>
+                            <constraint firstItem="Fqv-9I-HEJ" firstAttribute="leading" secondItem="t98-DK-HD5" secondAttribute="leading" identifier="$PhotoView.leading$" id="arK-ad-diZ"/>
+                            <constraint firstItem="Fqv-9I-HEJ" firstAttribute="top" secondItem="t98-DK-HD5" secondAttribute="top" constant="-20" identifier="$PhotoView.top$" id="ib0-4A-Byb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t98-DK-HD5"/>
                     </view>

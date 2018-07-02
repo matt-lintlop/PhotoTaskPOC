@@ -67,7 +67,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
             heightConstraint
             ])
 
-        photoView.backgroundColor = UIColor.clear
+        photoView.backgroundColor = UIColor.green
         photosStackView.insertArrangedSubview(photoView, at: 0)
         setAutoLayoutConstraints()
     }
@@ -78,18 +78,35 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         guard photosStackView != nil else {
             return
         }
+        
+        // TODO Count deleted & active Photo Views's
+        let deletedPhotoViewCount = photosStackView.arrangedSubviews.reduce(0) { (count, view) -> Int in
+            guard let photoView = view as? PhotoTaskPhotoView else {
+                return count
+            }
+            if photoView.isDeleted {
+                return count+1
+            }
+            else {
+                return count
+            }
+        }
+        let visiblePhotoViewCount = photosStackView.arrangedSubviews.count-deletedPhotoViewCount
+        
         let scrollViewWidth = photosScrollView.frame.size.width
         let subViewCount = photosStackView.arrangedSubviews.count
         if (subViewCount == 0) {
-            photosStackViewContentWidthConstraint.constant = scrollViewWidth
+            photosStackViewContentWidthConstraint.constant = 0
         }
         else {
             let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
-            let totalSpacing:CGFloat = CGFloat(subViewCount-1) * photosStackView.spacing
-            var stackViewtWidth: CGFloat = (CGFloat(subViewCount-1) * photoViewWidth) + totalSpacing
+            let totalSpacing:CGFloat = CGFloat(visiblePhotoViewCount-1) * photosStackView.spacing
+            var stackViewtWidth: CGFloat = (CGFloat(visiblePhotoViewCount-1) * photoViewWidth) + totalSpacing
             stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
             photosStackViewContentWidthConstraint.constant = stackViewtWidth
         }
+        
+        print("setAutoLayoutConstraints: deletedPhotoViewCount = \(deletedPhotoViewCount), visiblePhotoViewCount = \(visiblePhotoViewCount), photosStackViewContentWidthConstraint = \(photosStackViewContentWidthConstraint)")
     }
     
     // MARK: Action Handlers
@@ -226,6 +243,8 @@ extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
     func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
         print("PhotoTaskDetailsViewController: PhotoView was deleted: \(deletedPhotoView)")
-        deletedPhotoView.isHidden = true
+        photosScrollView.setContentOffset(CGPoint.zero, animated: false)
+        deletedPhotoView.isDeleted = true
+        setAutoLayoutConstraints()
     }
 }
