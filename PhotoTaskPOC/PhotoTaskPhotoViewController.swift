@@ -19,7 +19,7 @@ class PhotoTaskPhotoViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        print("Close Photo Button pressed")
+        print("PhotoTaskPhotoViewController: Close Photo Button pressed")
     }
 
 }

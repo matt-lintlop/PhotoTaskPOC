@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PhotoTaskPhotoViewDelegate: AnyObject {
-    func photoViewWasDeleted(_ deletedPhotoView: UIView)
+    func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView)
 }
 
 class PhotoTaskPhotoView : UIView {

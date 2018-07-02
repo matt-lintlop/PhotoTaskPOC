@@ -207,7 +207,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        print("Close pressed.")
+        print("PhotoTaskDetailsViewController: Close pressed.")
     }
 }
 
@@ -222,7 +222,7 @@ extension PhotoTaskDetailsViewController: CardViewControllerDelegate {
 
 extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
-    func photoViewWasDeleted(_ deletedPhotoView: UIView) {
+    func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
         print("PhotoView was deleted: \(deletedPhotoView)")
     }
 }
