@@ -76,7 +76,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         guard let photoViewController = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
             return
         }
-        
+        self.addChildViewController(photoViewController)    // TESTING
         let view = photoViewController.view     // sets IBOutlets in PhotoTaskPhotoViewController
         
         guard let photoView = photoViewController.photoView else {
