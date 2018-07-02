@@ -76,7 +76,8 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         guard let photoViewController = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
             return
         }
-        self.addChildViewController(photoViewController)    // TESTING
+        photoViewController.delegate = self
+        self.addChildViewController(photoViewController)
         let view = photoViewController.view     // sets IBOutlets in PhotoTaskPhotoViewController
         
         guard let photoView = photoViewController.photoView else {
@@ -96,20 +97,9 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: height)
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.insertArrangedSubview(photoView, at: 0)
-        setPhotoViewTags()
         setAutoLayoutConstraints()
     }
-    
-    private func setPhotoViewTags() {
-        let arrangedSubViews = photosStackView.arrangedSubviews
-        for (index, photoView) in arrangedSubViews.enumerated() {
-            if let photoView = photoView as? PhotoTaskPhotoView {
-                // set the PhotoView tag = index in photosStackView's arranged subviews.
-                photoView.tag = index
-            }
-        }
-    }
-
+ 
     private func setAutoLayoutConstraints() {
         guard photosStackView != nil else {
             return
@@ -223,6 +213,6 @@ extension PhotoTaskDetailsViewController: CardViewControllerDelegate {
 extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
     func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
-        print("PhotoView was deleted: \(deletedPhotoView)")
+        print("PhotoTaskDetailsViewController: PhotoView was deleted: \(deletedPhotoView)")
     }
 }

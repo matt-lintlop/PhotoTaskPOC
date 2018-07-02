@@ -8,18 +8,24 @@
 
 import UIKit
 
+protocol PhotoTaskPhotoViewDelegate: AnyObject {
+    func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView)
+}
+
 class PhotoTaskPhotoViewController: UIViewController {
     
     @IBOutlet weak var photoView: PhotoTaskPhotoView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var deletePhotoButton: UIButton!
     
+    weak var delegate: PhotoTaskPhotoViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        print("PhotoTaskPhotoViewController: Close Photo Button pressed")
+        delegate?.photoViewWasDeleted(photoView)
     }
 
 }

@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol PhotoTaskPhotoViewDelegate: AnyObject {
-    func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView)
-}
-
 class PhotoTaskPhotoView : UIView {
     
     weak var deletePhotoButton: UIButton?
