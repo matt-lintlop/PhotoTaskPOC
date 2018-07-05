@@ -61,8 +61,8 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         photosScrollView = UIScrollView()
         photosScrollView.translatesAutoresizingMaskIntoConstraints = false
         stackviewPlaceholderView.addSubview(photosScrollView)
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
+        stackviewPlaceholderView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
+        stackviewPlaceholderView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
         
         photosStackView = UIStackView()
         photosStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -204,8 +204,6 @@ extension PhotoTaskDetailsViewController: CardViewControllerDelegate {
 extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
     func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
-        print("PhotoTaskDetailsViewController: PhotoView was deleted: \(deletedPhotoView)")
-
         let duration = 0.25
         UIView.animate(withDuration: duration, animations: {
             deletedPhotoView.alpha = 0.0
