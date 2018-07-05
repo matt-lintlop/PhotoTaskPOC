@@ -113,15 +113,11 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.addArrangedSubview(photoView)
         
-        photosStackView.setNeedsLayout()        // TESTING
+        photosStackView.setNeedsLayout()
         photosStackView.layoutIfNeeded()
-
         let stackViewBoundsSize = photosStackView.bounds.size
         let scrollViewFrameSize = photosScrollView.frame.size
-
         let offset = CGPoint(x: stackViewBoundsSize.width - scrollViewFrameSize.width, y: 0.0)
-        
- 
         photosScrollView.setContentOffset(offset, animated: true)
     }
 
