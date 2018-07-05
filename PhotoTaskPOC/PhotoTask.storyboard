@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-Nu-KoP">
-                                <rect key="frame" x="16" y="178.5" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="179" width="288" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="StatusText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="20.5" id="oCS-NS-sMz"/>
@@ -57,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STO-YJ-JFJ">
-                                <rect key="frame" x="16" y="131" width="62.5" height="19.5"/>
+                                <rect key="frame" x="16" y="131" width="63" height="20"/>
                                 <accessibility key="accessibilityConfiguration" identifier="StatusLabel"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="19.5" id="DnB-Z8-U2o"/>
@@ -67,30 +67,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-fx-0CB" userLabel="Status Label Underline">
-                                <rect key="frame" x="16" y="163.5" width="288" height="1"/>
+                                <rect key="frame" x="16" y="164" width="288" height="1"/>
                                 <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="1" id="dec-Tn-vLu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nn-ra-ovE">
-                                <rect key="frame" x="16" y="232" width="288" height="466"/>
+                                <rect key="frame" x="16" y="232.5" width="288" height="465.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaA-0P-rRX">
-                                        <rect key="frame" x="0.0" y="8" width="121.5" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="8" width="122" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9N-Fs-8vk" userLabel="Instructions Label Underline">
-                                        <rect key="frame" x="0.0" y="40.5" width="288" height="1"/>
+                                        <rect key="frame" x="0.0" y="41" width="288" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="yU8-bf-zvL"/>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1IU-CV-VEU">
-                                        <rect key="frame" x="0.0" y="51.5" width="288" height="190"/>
+                                        <rect key="frame" x="0.0" y="52" width="288" height="188.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="kHa-CO-wXy"/>
@@ -99,14 +99,14 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0D-Pq-g9w" userLabel="Photos Label Underline">
-                                        <rect key="frame" x="0.0" y="311" width="288" height="1"/>
+                                        <rect key="frame" x="0.0" y="310.5" width="288" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="v3W-ue-Hlk"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHOTOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84f-zi-ujy">
-                                        <rect key="frame" x="0.0" y="278.5" width="67.5" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="277.5" width="68" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="19.5" id="5bw-Xp-1Kb"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="ahY-J4-Kbg"/>
@@ -116,14 +116,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTF-xP-va0" userLabel="Photos Container View">
-                                        <rect key="frame" x="0.0" y="323" width="288" height="80"/>
+                                        <rect key="frame" x="0.0" y="322.5" width="288" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEo-x1-fIf" userLabel="stackviewPlaceholderView">
                                                 <rect key="frame" x="88" y="0.0" width="200" height="80"/>
+                                                <subviews>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylE-P3-Iat">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="80"/>
+                                                    </scrollView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="ylE-P3-Iat" firstAttribute="centerY" secondItem="WEo-x1-fIf" secondAttribute="centerY" id="3ER-Xb-o1F"/>
+                                                    <constraint firstItem="ylE-P3-Iat" firstAttribute="centerX" secondItem="WEo-x1-fIf" secondAttribute="centerX" id="Gm3-y6-5qs"/>
+                                                    <constraint firstItem="ylE-P3-Iat" firstAttribute="leading" secondItem="WEo-x1-fIf" secondAttribute="leading" id="V1N-o7-di1"/>
                                                     <constraint firstAttribute="width" constant="200" id="Y1I-PH-bu2"/>
                                                     <constraint firstAttribute="height" constant="80" id="imx-se-Ou4"/>
+                                                    <constraint firstItem="ylE-P3-Iat" firstAttribute="top" secondItem="WEo-x1-fIf" secondAttribute="top" id="nOM-7t-lCM"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEd-dm-d0u" userLabel="Add Photo View">
@@ -159,7 +168,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-Uw-Ogl">
-                                        <rect key="frame" x="24" y="427" width="240" height="30"/>
+                                        <rect key="frame" x="24" y="426.5" width="240" height="30"/>
                                         <color key="backgroundColor" red="0.1803921568627451" green="0.49019607843137253" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="30" id="LlY-nr-hzH"/>
@@ -235,6 +244,7 @@
                         <outlet property="photoTaskInstructionsTextField" destination="1IU-CV-VEU" id="Ksx-tk-jBW"/>
                         <outlet property="photoTaskLocationLabel" destination="uzP-vI-mIP" id="4z3-RC-TaL"/>
                         <outlet property="photoTaskTitleLabel" destination="Cvq-hF-ppq" id="TTN-Ma-vYA"/>
+                        <outlet property="photosScrollView" destination="ylE-P3-Iat" id="yzI-EI-oWx"/>
                         <outlet property="stackviewPlaceholderView" destination="WEo-x1-fIf" id="bLi-m0-H5i"/>
                         <outlet property="submitPhotoTaskButton" destination="8NG-Uw-Ogl" id="9Mz-uV-au8"/>
                     </connections>

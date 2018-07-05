@@ -30,7 +30,8 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     @IBOutlet weak var addPhotoButton: UIButton!
  //   @IBOutlet weak var scrollViewContentView: UIView!
     @IBOutlet weak var stackviewPlaceholderView: UIView!
-    var photosScrollView: UIScrollView!
+
+    @IBOutlet weak var photosScrollView: UIScrollView!
     var photosStackView: UIStackView!
     
     // MARK: Properties
@@ -58,12 +59,6 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     }
      
     func setupStackView() {
-        photosScrollView = UIScrollView()
-        photosScrollView.translatesAutoresizingMaskIntoConstraints = false
-        stackviewPlaceholderView.addSubview(photosScrollView)
-        stackviewPlaceholderView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
-        stackviewPlaceholderView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
-        
         photosStackView = UIStackView()
         photosStackView.translatesAutoresizingMaskIntoConstraints = false
         photosStackView.axis = .horizontal
