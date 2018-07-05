@@ -111,7 +111,18 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         let widthConstraint = photoView.widthAnchor.constraint(lessThanOrEqualToConstant: height)
         let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: height)
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
-        photosStackView.insertArrangedSubview(photoView, at: 0)
+        photosStackView.addArrangedSubview(photoView)
+        
+        photosStackView.setNeedsLayout()        // TESTING
+        photosStackView.layoutIfNeeded()
+
+        let stackViewBoundsSize = photosStackView.bounds.size
+        let scrollViewFrameSize = photosScrollView.frame.size
+
+        let offset = CGPoint(x: stackViewBoundsSize.width - scrollViewFrameSize.width, y: 0.0)
+        
+ 
+        photosScrollView.setContentOffset(offset, animated: true)
     }
 
     func takePhoto() {
