@@ -22,13 +22,16 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     @IBOutlet weak var photoTaskLocationLabel: UILabel!
     @IBOutlet weak var photoTaskInstructionsTextField: UITextView!
     
-    @IBOutlet weak var photosStackView: UIStackView!
+ //   @IBOutlet weak var photosStackView: UIStackView!
     @IBOutlet weak var lowerSectionView: UIView!
     @IBOutlet weak var submitPhotoTaskButton: UIButton!
-    @IBOutlet weak var photosStackViewContentWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var photosScrollView: UIScrollView!
+ //   @IBOutlet weak var photosStackViewContentWidthConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var photosScrollView: UIScrollView!
     @IBOutlet weak var addPhotoButton: UIButton!
-    @IBOutlet weak var scrollViewContentView: UIView!
+ //   @IBOutlet weak var scrollViewContentView: UIView!
+    @IBOutlet weak var stackviewPlaceholderView: UIView!
+    var photosScrollView: UIScrollView!
+    var photosStackView: UIStackView!
     
     // MARK: Properties
     
@@ -55,67 +58,21 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     }
      
     func setupStackView() {
-        let viewHeight = photosScrollView.bounds.size.height
-        let viewWidth = photosScrollView.bounds.size.width
-        let frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
-        let photoView = UIView(frame: frame)
+        photosScrollView = UIScrollView()
+        photosScrollView.translatesAutoresizingMaskIntoConstraints = false
+        stackviewPlaceholderView.addSubview(photosScrollView)
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[photosScrollView]|", options: .alignAllCenterX, metrics: nil, views: ["photosScrollView": photosScrollView]))
         
-        let widthConstraint = photoView.widthAnchor.constraint(lessThanOrEqualToConstant: viewWidth)
-        let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: viewHeight)
-        NSLayoutConstraint.activate([
-            widthConstraint,
-            heightConstraint
-            ])
-
-        photoView.backgroundColor = UIColor.clear
-        photosStackView.insertArrangedSubview(photoView, at: 0)
-        setAutoLayoutConstraints()
-    }
-    
-    // MARK: Auto Layout
-
-    private func setAutoLayoutConstraints() {
-        guard photosStackView != nil else {
-            return
-        }
-        
-        let deletedPhotoViewCount = photosStackView.arrangedSubviews.reduce(0) { (count, view) -> Int in
-            guard let photoView = view as? PhotoTaskPhotoView else {
-                return count
-            }
-            if photoView.isDeleted {
-                return count+1
-            }
-            else {
-                return count
-            }
-        }
-        let visiblePhotoViewCount = photosStackView.arrangedSubviews.count-deletedPhotoViewCount
-        
-        let scrollViewWidth = photosScrollView.frame.size.width
-        let subViewCount = photosStackView.arrangedSubviews.count
-        if (visiblePhotoViewCount <= 1) {
-            photosStackViewContentWidthConstraint.constant = scrollViewWidth
-        }
-        else {
-            let photoViewWidth = photosStackView.arrangedSubviews.first!.bounds.size.width
-            let totalSpacing:CGFloat = CGFloat(visiblePhotoViewCount) * photosStackView.spacing
-            var stackViewtWidth: CGFloat = (CGFloat(visiblePhotoViewCount-1) * photoViewWidth) + totalSpacing
-            
-            if deletedPhotoViewCount > 0 {
-                stackViewtWidth += photosStackView.spacing
-            }
-            
-            stackViewtWidth = max(stackViewtWidth, scrollViewWidth)
-            photosStackViewContentWidthConstraint.constant = stackViewtWidth
-        }
-  
-        scrollViewContentView.layoutIfNeeded()
-        photosStackView.layoutIfNeeded()
-        photosScrollView.layoutIfNeeded()
-    }
-    
-    // MARK: Action Handlers
+        photosStackView = UIStackView()
+        photosStackView.translatesAutoresizingMaskIntoConstraints = false
+        photosStackView.axis = .horizontal
+        photosStackView.spacing = 10
+        photosScrollView.addSubview(photosStackView)
+        photosScrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[photosStackView]|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: ["photosStackView": photosStackView]))
+        photosScrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[photosStackView]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: ["photosStackView": photosStackView]))
+}
+     // MARK: Action Handlers
     
     @IBAction func submitPhotoTaskPressed(_ sender: Any) {
         print("Submit Photo Task Pressed")
@@ -134,7 +91,7 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
     
     func addPhoto(_ photoImage: UIImage) {
         let stackViewSize = photosStackView.bounds.size
-        let height = stackViewSize.height
+        let height:CGFloat = 80.0
         
         let storyboard = UIStoryboard(name: "PhotoTask", bundle: nil)
         guard let photoViewController = storyboard.instantiateViewController(withIdentifier: "PhotoTaskPhotoViewController") as? PhotoTaskPhotoViewController else {
@@ -157,11 +114,9 @@ class PhotoTaskDetailsViewController: UIViewController, UITextViewDelegate, UIIm
         photoView.layer.cornerRadius = layerCornerRadius
         photoView.clipsToBounds = true
         let widthConstraint = photoView.widthAnchor.constraint(lessThanOrEqualToConstant: height)
-        widthConstraint.priority = .defaultLow
         let heightConstraint = photoView.heightAnchor.constraint(equalToConstant: height)
         NSLayoutConstraint.activate([widthConstraint, heightConstraint])
         photosStackView.insertArrangedSubview(photoView, at: 0)
-        setAutoLayoutConstraints()
     }
 
     func takePhoto() {
@@ -250,8 +205,13 @@ extension PhotoTaskDetailsViewController: PhotoTaskPhotoViewDelegate {
     
     func photoViewWasDeleted(_ deletedPhotoView: PhotoTaskPhotoView) {
         print("PhotoTaskDetailsViewController: PhotoView was deleted: \(deletedPhotoView)")
-        photosScrollView.setContentOffset(CGPoint.zero, animated: false)
-        deletedPhotoView.isDeleted = true
-        setAutoLayoutConstraints()
+
+        let duration = 0.25
+        UIView.animate(withDuration: duration, animations: {
+            deletedPhotoView.alpha = 0.0
+            deletedPhotoView.isDeleted = true
+        }) { (finished) in
+            self.photosStackView.layoutIfNeeded()
+        }
     }
 }

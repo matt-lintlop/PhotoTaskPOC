@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wx1-Of-JGN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wx1-Of-JGN">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="splitview1_3"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -118,35 +118,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTF-xP-va0" userLabel="Photos Container View">
                                         <rect key="frame" x="0.0" y="323" width="288" height="80"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-6k-RoB" userLabel="Photos Scroll View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEo-x1-fIf" userLabel="stackviewPlaceholderView">
                                                 <rect key="frame" x="88" y="0.0" width="200" height="80"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIT-UD-WJm" userLabel="Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-6v-qW8" userLabel="Photos Stack View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <accessibility key="accessibilityConfiguration" identifier="Photos ScrollView.ContetView"/>
-                                                        <constraints>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="leading" secondItem="uIT-UD-WJm" secondAttribute="leading" identifier="$StackView.Leading$" id="6b1-iq-a9S"/>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="top" secondItem="uIT-UD-WJm" secondAttribute="top" identifier="$StackView.Top$" id="IBs-Sg-uve"/>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="height" secondItem="uIT-UD-WJm" secondAttribute="height" identifier="$StackView.Height$" id="Ihg-HO-3iS"/>
-                                                            <constraint firstAttribute="width" constant="288" identifier="$StackView.Content.Width$" id="YBH-nh-vnL"/>
-                                                            <constraint firstAttribute="height" constant="80" identifier="$StackView.Content.Height$" id="tfW-3Y-owx"/>
-                                                            <constraint firstItem="wDB-6v-qW8" firstAttribute="width" secondItem="uIT-UD-WJm" secondAttribute="width" identifier="$StackView.Width$" id="vg1-B8-6ra"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="height" secondItem="Cfn-6k-RoB" secondAttribute="height" identifier="$ContentView..Height$" id="9P0-Tw-L20"/>
-                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="top" secondItem="Cfn-6k-RoB" secondAttribute="top" identifier="$.ContentView.Topt$" id="CJe-VE-MuP"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uIT-UD-WJm" secondAttribute="trailing" identifier="$Photos.ScrollView.Trailing$" id="bGX-CP-w07"/>
-                                                    <constraint firstAttribute="bottom" secondItem="uIT-UD-WJm" secondAttribute="bottom" id="fXs-Ym-cZJ"/>
-                                                    <constraint firstItem="uIT-UD-WJm" firstAttribute="leading" secondItem="Cfn-6k-RoB" secondAttribute="leading" id="ua1-cd-oh2"/>
+                                                    <constraint firstAttribute="width" constant="200" id="Y1I-PH-bu2"/>
+                                                    <constraint firstAttribute="height" constant="80" id="imx-se-Ou4"/>
                                                 </constraints>
-                                            </scrollView>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEd-dm-d0u" userLabel="Add Photo View">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <subviews>
@@ -172,13 +151,10 @@
                                         </subviews>
                                         <accessibility key="accessibilityConfiguration" identifier="PhotosContainerView"/>
                                         <constraints>
-                                            <constraint firstItem="Cfn-6k-RoB" firstAttribute="leading" secondItem="tEd-dm-d0u" secondAttribute="trailing" constant="8" id="983-ih-q1u"/>
                                             <constraint firstItem="tEd-dm-d0u" firstAttribute="top" secondItem="wTF-xP-va0" secondAttribute="top" id="9pc-sg-1GY"/>
-                                            <constraint firstAttribute="trailing" secondItem="Cfn-6k-RoB" secondAttribute="trailing" id="Ob8-It-Rmx"/>
-                                            <constraint firstAttribute="bottom" secondItem="Cfn-6k-RoB" secondAttribute="bottom" id="W6Y-wj-GVs"/>
+                                            <constraint firstItem="WEo-x1-fIf" firstAttribute="top" secondItem="wTF-xP-va0" secondAttribute="top" id="Ab0-g6-pft"/>
                                             <constraint firstAttribute="height" priority="250" constant="80" id="dwG-Xb-CB1"/>
-                                            <constraint firstItem="tEd-dm-d0u" firstAttribute="centerY" secondItem="Cfn-6k-RoB" secondAttribute="centerY" id="fKD-zN-cD1"/>
-                                            <constraint firstItem="Cfn-6k-RoB" firstAttribute="top" secondItem="wTF-xP-va0" secondAttribute="top" id="m70-he-pXf"/>
+                                            <constraint firstAttribute="trailing" secondItem="WEo-x1-fIf" secondAttribute="trailing" id="fm7-Ck-fZC"/>
                                             <constraint firstItem="tEd-dm-d0u" firstAttribute="leading" secondItem="wTF-xP-va0" secondAttribute="leading" id="pAg-CU-Hy6"/>
                                         </constraints>
                                     </view>
@@ -259,10 +235,7 @@
                         <outlet property="photoTaskInstructionsTextField" destination="1IU-CV-VEU" id="Ksx-tk-jBW"/>
                         <outlet property="photoTaskLocationLabel" destination="uzP-vI-mIP" id="4z3-RC-TaL"/>
                         <outlet property="photoTaskTitleLabel" destination="Cvq-hF-ppq" id="TTN-Ma-vYA"/>
-                        <outlet property="photosScrollView" destination="Cfn-6k-RoB" id="oNh-Zg-kdU"/>
-                        <outlet property="photosStackView" destination="wDB-6v-qW8" id="3ps-xh-Y0F"/>
-                        <outlet property="photosStackViewContentWidthConstraint" destination="YBH-nh-vnL" id="KD9-z3-ypD"/>
-                        <outlet property="scrollViewContentView" destination="uIT-UD-WJm" id="8rn-rD-T89"/>
+                        <outlet property="stackviewPlaceholderView" destination="WEo-x1-fIf" id="bLi-m0-H5i"/>
                         <outlet property="submitPhotoTaskButton" destination="8NG-Uw-Ogl" id="9Mz-uV-au8"/>
                     </connections>
                 </viewController>
